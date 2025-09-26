@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+<!--                                                          [{( 1 )}]                                                                                                                                                                                                                                                                                                                                      -->
+<!-- 
+HTML (HYPERTEXT MARKUP LANGUAGE) 
+- HYPERTEXT: THE LINKS THAT TAKE YOU TO THE PAGES 
+- MARKUP: THE TAGS THAT MAKE THE FUNCTION
+- LANGUAGE: THAT DESCRIBE THE WEB PAGE 
+
+ATTRIBUTE: EXTENSIONS PROPERTIES ADD TO STAR TAG
+- GLOBAL ATTRIBUTES: ATTRIBUTE USE IN ANY TAG
+- CUSTOM ATTRIBUTES: ATTRIBUTE USE ONLY PRIVET TAG
+
+
+-->
+
+<!--                                                          Doctype                                                                                                        -->
+  <!-- <!DOCTYPE html>: to render the the page in stander mode(!!quirks mode don't support all elements!!) -->
+
+<!DOCTYPE html>
+<html lang="en"> 
+
+
+<!--                                                          Head Tag                                                                                                         -->
+<head>
+  <!-- <head></head> Tag: contain meta data(the information) of the web page -->
+<html lang="en">
+
+
+<!--                                                          Meta Tag                                                                                                         -->
+  <!-- <meta> Tag: contain the information of the data -->
+<meta charset="UTF-8">
+  <!-- [atr] charset="UTF-8": support other lang (include the arabic) -->
+<meta name="description" content="t=This is the content of the description"> 
+  <!-- [atr] name="description" , content="--": to write information about the web page in the browser -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--                                                          Link Tag                                                                                                         -->
+  <!-- <link> Tag: contain link of file -->
+<link rel="stylesheet" href="/Programing_References/css_refernce.css">
+  <!-- [atr] rel="stylesheet": the relationship between the file and the the page -->
+  <!-- [atr]  href="/Programing_References/css_refernce.css": link of file -->
+
+<!--                                                          Title Tag                                                                                                         -->
+<!-- <title></title> Tag: contain the title of the web page -->
+<title>Document</title>
+
+</head>
+
+<!--                                                          Body Tag                                                                                                         -->
+<body>
+  
+  <div style="width: 100%; height: 800px;"></div>
+
+<!-- !!class and id : you can name same id for deferent elements , but id name only for one element!!
+!!more than one class for the element , only one id !! -->
+
+
+
+
+
+<!--TEXT TAGS-->                         
+<!--                                                          Header Tag                                                                                                         -->                         
+  <!-- <h1></h1>...<h6></h6>: contain title for the body -->
+<h1>welcome</h1>
+<!--                                                          Paragraph Tag                                                                                                         -->                         
+  <!-- <p></p>: contain text -->
+<p>This is paragraph</p>
+
+
+
+
+
+
+
+
+
+<!--FORMATTING TEXT TAGS-->
+<!--                                                          Bold Tag                                                                                                         -->                         
+  <!-- <b></b>: use to make text bold -->
+<b>Bold</b>
+
+<!--                                                          Strong Tag                                                                                                         -->                         
+  <!-- <strong></strong>: use like bold, but use for important text -->
+<strong>important Information</strong>
+  
+<!--                                                          Italic Tag                                                                                                         -->                         
+  <!-- <i></i>: use to make text مايل -->
+<i>Text</i>
+  
+<!--                                                          Emphasized Tag                                                                                                         -->                         
+  <!-- <em></em>: use like italic, but use for important text -->
+<em>important Information</em>
+
+<!--                                                          Underline Tag                                                                                                         -->                         
+  <!-- <u></u>: use to underline text-->
+<u>Underline</u>
+
+<!--                                                          Delete Tag                                                                                                         -->                         
+  <!-- <del></del>: use to cross the text -->
+<del>Delete</del>
+
+<!--                                                          Inserted Tag                                                                                                         -->                         
+  <!-- <ins></ins>: use to add text and underline the new text-->
+<ins>Add</ins>
+
+<!--                                                          Small Tag                                                                                                         -->                         
+  <!-- <small></small>: use to make the text small size -->
+<small>Small</small>
+
+<!--                                                          Subscript Tag                                                                                                         -->                         
+  <!-- <sub>Subscript</sub>: use to make letter under the text -->
+<sub>Subscript</sub>
+
+<!--                                                          Superscript Tag                                                                                                         -->                         
+  <!-- <sup>Superscript</sup>: use to make letter upper the text -->
+<sup>Superscript</sup>
+
+
+  
+
+
+
+
+<!--                                                          AnchorTag                                                                                                         -->                         
+  <!-- <a></a>: element have link / target="_blank" open link in new page / target="_self" open link in same page -->
+<a href="https://www.google.com" target="_self" title="Go To Google">Google</a>
+<a href="/course/html_course/html_course_queiz.html" target="_self">Test</a>
+<a href="#id-name" target="_self">Id</a>
+  <!--[atr] href="https://www.sgoogle.com": contain the id name or the link  -->
+  <!--[atr] target=
+  "_blank": open the link in new page  
+  "_self": open the link in same page  -->
+  <!-- [atr] title="Go To...": show text when hover in link -->
+
+  
+<!--                                                          Image Tag                                                                                                         -->                         
+  <!-- <img>: show image -->
+  <!-- <figure>: container of the image tag -->
+  <!-- <figcaption>: caption about the image -->
+<figure>
+  <img src="../Porject-1/images/lll.png" alt="img">
+  <figcaption>Caption of the image</figcaption>
+</figure>
+  <!-- [atr] src="../Porject-1/images/lll.png": use to write link of the img or source file  -->
+  <!-- [atr] alt="img": show the text if the image not show -->
+
+
+
+
+
+
+
+
+<!--LIST-->
+<!--                                                          Unordered List Tag                                                                                                         -->                         
+  <!-- <ul></ul>: contain items -->
+  <!-- <li></li>: contain item of the list-->
+<ul>
+  <li>C</li>
+  <li>
+    A 
+    <ul>
+      <li>a</li>
+      <li>
+        aa
+        <ul>
+          <li>aa</li>
+          <li>aa aa</li>
+          <li>aa aa aa</li>
+        </ul>
+      </li>
+      <li>aaa</li>
+    </ul>
+  </li>
+  <li>N</li>
+</ul>
+
+<!--                                                          Ordered List Tag                                                                                                         -->                         
+  <!-- <ol></ol>: contain items -->
+  <!-- <li></li>: contain item of the list-->
+<ol type="I">
+  <li>C</li>
+  <li>
+    A 
+    <ol reversed>
+      <li>a</li>
+      <li>
+        aa
+        <ol>
+          <li>aa</li>
+          <li value="10">aa aa</li>
+          <li>aa aa aa</li>
+        </ol>
+      </li>
+      <li>aaa</li>
+    </ol>
+  </li>
+  <li>N</li>
+</ol>
+  <!-- [atr] type="I": type of the ordering-->
+  <!-- [atr] reversed: revers the order items-->
+  <!-- [atr] value="10": start the order from the value-->
+
+  <!--                                                          Description List Tag                                                                                                         -->                         
+  <!-- <dl></dl>: description list tag -->
+  <!-- <dt></dt>: contain description list items -->
+  <!-- <dd></dd>: contain item description -->
+<dl>
+  <dt>HTML</dt>
+  <dd>Hypertext Markup Lang</dd>
+  <dd>First Lang</dd>
+  <dt>CSS</dt>
+  <dd>Cascading Style Sheet</dd>
+  <dd>Second Lang</dd>
+  <dt>JS</dt>
+  <dd>Java Script</dd>
+  <dd>Third Lang</dd>
+</dl>
+
+
+
+
+<!--                                                          [{( 2 )}]                                                                                                                                                                                                                                                                                                                                      -->
+
+<!--                                                          Table Tag                                                                                                         -->                         
+  <!-- <thead></thead>: contain of the table header -->
+  <!-- <tbody></tbody>: contain of the table body -->
+  <!-- <tfoot></tfoot> contain of the table footer -->
+  <!-- <tr></tr>: contain the row -->
+  <!-- <td></td>: contain the data of the row -->
+<table border="1">
+  <caption>Salary Table</caption>
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Age</td>
+      <td>Country</td>
+      <td>Salary</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ali</td>
+      <td>32</td>
+      <td>egypt</td>
+      <td>2,000</td>
+    </tr>
+    <tr>
+      <td>omar</td>
+      <td>16</td>
+      <td>ksa</td>
+      <td>4,500</td>
+    </tr>
+    <tr>
+      <td>ahmed</td>
+      <td>45</td>
+      <td>oman</td>
+      <td>4,000</td>
+    </tr>
+    <tr>
+      <td>mohammed</td>
+      <td>22</td>
+      <td>sudan</td>
+      <td>2,500</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="4">footer</td>
+    </tr>
+  </tfoot>
+</table>
+  <!-- [atr] colspan="4": use to concatenate more than one <td> -->
+
+
+
+
+
+
+
+
+
+
+<!--                                                          Span Tag                                                                                                         -->                         
+  <!-- <span></span>: use to target text -->
+<span>Span</span>
+
+
+<!--                                                          Break Tag                                                                                                         -->                         
+<!-- <br>: use to target text and break to the next line -->
+one <br> two <br>  three
+
+
+<!--                                                          Horizontal Rule Tag                                                                                                         -->                         
+  <!-- <hr>: use to make line -->
+<hr>
+
+
+
+
+<!--                                                          Audio Tag                                                                                                         -->                         
+  <!-- <audio></audio>: contain audio  -->
+  <!-- <source>: contain the source of the audio -->
+<audio controls autoplay muted loop>
+  <source src="/Audio/correct.mp3" type="audio/mpeg">
+  Your browser does not support the audio <!-- show the text if the audio doesn't show-->
+</audio>
+  <!--[atr] controls: contain buttons to controls the audio-->
+  <!--[atr] loop: loop the audio-->
+  <!--[atr] muted: mute the audio-->
+  <!--[atr] autoplay: play after reload the page-->
+
+
+
+
+<!--                                                          Video Tag                                                                                                         -->                         
+  <!-- <video></video>: contain video  -->
+  <!-- <source>: contain the source of the video -->
+<video controls autoplay muted loop poster="/course/image_course/lll.png">
+  <source src="/course/video_course/Dance .mp4" type="video/mp4">
+  Your browser does not support the video tag. <!-- show the text if the video doesn't show-->
+  <track src=" " kind="subtitles" srclang="en" label="English">
+  <track src=" " kind="subtitles" srclang="ar" label="Arabic">
+</video>
+  <!--[atr] controls: contain buttons to controls the video-->
+  <!--[atr] loop: loop the video-->
+  <!--[atr] muted: mute the video-->
+  <!--[atr] autoplay: play after reload the page-->
+  <!--[atr] poster="/course/image_course/lll.png": add image , till the video ready to play-->
+  <!--[atr] kind="subtitles": contain the subtitles or captions or metadata...ect-->
+  <!--[atr] srclang="en": type of kind-->
+  <!--[atr] label="Arabic": label for the srclang-->
+  <!-- ?? [atr] preload ?? -->
+
+
+
+
+
+
+<!--                                                          [{( 3 )}]                                                                                                                                                                                                                                                                                                                                      -->
+
+<!--                                                          Form Tag                                                                                                         -->                         
+
+  <!-- <label>: name for the input -->
+  <!-- <input>: contain the information of the form-->
+  <!-- <select></select>: contain options to select-->
+  <!-- <optgroup></optgroup>: contain list of options -->
+  <!-- <option></option>: contain item to select -->
+  <!-- <datalist></datalist>: contain the options and the list id-->
+  <!-- <textarea></textarea>: contain long text -->
+<form action="my_file" method="get">
+  <div>
+    <label for="user">User Name</label>
+    <input type="text" id="user" value="mohammed" placeholder="User Name" name="user" readonly>
+  </div>
+  <br>
+  <div>
+    <label for="pas">Password</label>
+    <input type="password" id="pas" placeholder="Password" name="password" minlength="10" maxlength="30" required> 
+  </div>
+  <br>
+  <div>
+    <label for="mail">Email</label>
+    <input type="email" id="mail" value="me@gmail.com" name="mail" disabled>
+  </div>
+  <br>
+  <div>
+    <label for="date">Date</label>
+    <input type="date" id="date"  name="date" required>
+  </div>
+  <br>
+  <div>
+    <label for="url">Facebook Account</label>
+    <input type="url" id="url"  name="url">
+  </div>
+  <div>
+    <label for="time">Time</label>
+    <input type="time" id="time"  name="time">
+  </div>
+  <div>
+    <label for="sal">Salary</label>
+    <input type="number" id="sal" value="50" name="salary" min="10" max="100">
+  </div>
+  <br>
+  <div>
+    <label for="file">Select File</label>
+    <input type="file" id="file"  name="file">
+  </div>
+  <br>
+  <div>
+    <label for="ran">Range</label>
+    <input type="range" id="ran" value="30" name="range" min="0" max="100" step="10">
+  </div>
+  <div>
+    <input type="radio" id="egy" value="Egypt" name="country">
+    <label for="egy">Egypt</label>
+  </div>
+  <div>
+    <input type="radio" id="sud" value="Sudan" name="country"checked>
+    <label for="sud">Sudan</label>
+  </div>
+  <div>
+    <input type="radio" id="ksa" value="KSA" name="country">
+    <label for="ksa">KSA</label>
+  </div>
+  <div>
+    <input type="checkbox" id="html" value="html" name="skill" checked>
+    <label for="html">HTML</label>
+  </div>
+  <div>
+    <input type="checkbox" id="css" value="css" name="skill">
+    <label for="css">CSS</label>
+  </div>
+  <div>
+    <input type="checkbox" id="js" value="js" name="skill">
+    <label for="js">JS</label>
+  </div>
+  <br>
+  <hr>
+  <div>
+    <label for="book">Choose Book</label>
+    <br>
+    <select name="the-book"id="book" multiple>
+      <optgroup label="Drama">
+        <option value="1">book1</option>
+        <option value="2" selected>book2</option>
+        <option value="3">book3</option>
+        <option value="4">book4</option>
+      </optgroup>
+      <optgroup label="Romanic">
+        <option value="5">book1</option>
+        <option value="6">book2</option>
+        <option value="7">book3</option>
+        <option value="8">book4</option>
+      </optgroup>
+    </select>
+  </div>
+  <br>
+  <div>
+    <input list="programming-lang" name="pro">
+    <datalist id="programing-lang">
+      <option value="JS">
+      <option value="C#">
+      <option value="C++">
+      <option value="Python">
+    </datalist>
+  </div>
+  <br>
+  <div>
+    <textarea name="subject" id="" cols="30" rows="10" placeholder="Write Text"></textarea>
+  </div>
+  <br>
+  <input type="reset">
+  <input type="submit">
+</form>
+  <!-- 
+  [atr] type="text": text type input
+  "submit": send information button
+  "reset": reset value of inputs 
+  "email": email type input
+  "password": password type input
+  "hidden": hide type input
+  "color": choose color type input
+  "time": 
+  "date": 
+  "file": 
+  "url": 
+  "month": 
+  [atr] required: important to full this input
+  [atr] action="my_file": the place that the data send to
+  [atr] method="get": show the data in the url
+  "post": show the data in the url
+  [atr] readonly: read the input value only , and it will send again with data
+  [atr] disabled: read the input value only , and it will not send again with data 
+  [atr] autofocus: focus in the input when reload the page 
+  [atr] minlength & maxlength: control the characters of the input
+  [atr] multiple: choose more than one option
+  [atr] list="programming": work like select with search feature
+  [atr] value = "save  main value for the input"
+  [atr] name = "the name of the data send with"
+  -->
+
+
+
+
+<!--                                                          Iframe Tag                                                                                                                                                                                   -->                         
+  <!-- <iframe>: small window contain new page-->
+<iframe src="https://google.com"></iframe>
+
+
+
+<!--                                                          Code Tag                                                                                                         -->                         
+  <!-- <code>: contain code -->
+<code>
+  var x = 5;
+  var y = 5;
+  console.log(x + y);
+</code>
+
+
+
+
+<!--                                                          Pre Formatter Text Tag                                                                                                         -->                         
+  <!-- <pre>: contain the text as written -->
+<pre>
+  <code>
+    var x = 5;
+    var y = 5;
+    console.log(x + y);
+  </code>
+</pre>
+
+
+
+
+<!--                                                          Aria Tag                                                                                                         -->                         
+  <!-- important to use get full accessibility in web page -->
+  <div role="checkbox" aria-checked="true" tabindex="0" aria-labelledby="plan1">plan1</div>
+  <label id="plan1" >plan1 label</label>
+  <div tabindex="0">plan2</div>
+  <div tabindex="0">plan3</div>
+  <!-- ?? Aria ?? -->
+  
+
+
+
+
+
+<!--                                                   SEO search
+!! <head><title>SAME NAME</title></head> == <h1>SAME NAME</h1> /  <title> and <h1/> =< 20 letter !!
+!! <meta name="description" content="this website talk about ...ect"> !!
+!! <meta name="keywords" content="keywords, keywords, keywords, ...ect"> !!
+!! <img alt="important"> !!
+!! <p> =< 3 lines !!
+!! <h1> one time only  !!
+-->
+
+
+<!--                                                     semantic element
+
+................................................................................................................................                                                        
+.                                                            Header                                                            .
+................................................................................................................................
+.                             .                               Nav                                                              .
+.                             ..................................................................................................
+.                             .                                  .                                                             .
+.                             .           Section                .               Section                                       .
+.                             .    .....................         .         ......................                               .
+.                             .    .      Header       .         .         .      Header        .                              .
+.                             .    .....................         .         ......................                              .
+.                             .    .                   .         .         .                    .                              .
+.                             .    .                   .         .         .                    .                              .
+.                             .    .      Article      .         .         .      Article       .                              .
+.            Aside            .    .                   .         .         .                    .                              .
+.                             .    .                   .         .         .                    .                              .
+.                             .    .                   .         .         .                    .                              .
+.                             .    .                   .         .         .                    .                              .
+.                             .    .....................         .         ......................                              .
+.                             .                                  .                                                             .
+.                             .                                  .                                                             .
+.                             .                                  .                                                             .
+.                             .                                  .                                                             .
+................................................................................................................................                                                          
+.                                                                                                                              .
+.                                                              Footer                                                          .
+.                                                                                                                              .
+................................................................................................................................                                                          
+
+ -->
+
+
+
+<!--                                                          events
+
+<button onclick="console.log(...)">button</button> => when click the button make the event
+
+
+-->
+
+
+
+<!--                                                          Entities                                                                                                         -->                         
+<!-- entities use to write shapes , start with & and end with ; -->
+<!-- <: &lt; less than -->
+<!-- >: &gt; greater than -->
+
+
+<!-- html5 APIs , <svg> and <canvas> use with javascript -->
+
+  <script src="/Programing_References/javascript_reference.js" type="module"></script>
+  <script src="/Programing_References/module.js" type="module"></script>
+  <script src="/course/javascript_cource/javascript_cource_queiz.js"></script>
+</body>
+</html>
