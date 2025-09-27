@@ -1,0 +1,1556 @@
+/* 
+
+CSS(Cascading Style Sheet):
+- Cascading: properties flow 
+- Style Sheet: the file that we write init css language
+*/
+
+/*   Syntax
+
+selector {
+  (property of selector : value ;) => declaration
+  (property of selector : value ;) => declaration
+  (property of selector : value ;) => declaration
+}
+Ex: 
+p {
+  color: red;
+}
+* Not * 
+- to targe element have a class : write . before selector
+Ex: 
+.p {
+  color: red;
+}
+- to targe element have a id : write # before selector but, not professional to target selector with id
+Ex: 
+#p {
+  color: red;
+}
+- always write classes and ids with kaaba-case
+Ex: 
+.first-test {
+  color: red;
+}
+Three Ways To Write Css:
+[1] - External Style Sheet : write css code in external file and then added to html using link tag
+Ex:/
+<link rel="stylesheets" href="/Programming_References/css_reference.css">
+[2] Internal Style Sheet: write the css code inside style tag
+Ex:/ 
+<head>
+  <style>
+    p {
+    color: red;
+    }
+  </style>
+<head/>
+[3] Inline Style Sheet: we write it inside the style attribute
+Ex:/
+<p style="color: red;">paragraph</p> 
+* Not *
+- External Style Sheet : this way is the normal way and it's the weak one ,but it best practices way to write css code 
+- Internal Style Sheet: write at any place ,but best practices in html <head> tag
+- Inline Style Sheet: this type is the strongest way , but is not best practices
+*/
+
+/*   Background
+
+background-color: use to change selector background to other color
+  :red; = color name
+  Ex:/
+    background-color: red;
+  Ex:/
+  :rgba(255, 0 255, 0%); = color rgba  (red green blue / alpha channel)
+    background-color: rgba(255, 0 255, 0%);
+  :#ff0000; = color hex code
+  Ex:/
+    background-color: #ff0000;
+
+background-image: use to change selector background to image 
+  :url("./spiderman.jpg"); = use to add url of the image in selector background
+    background-image: url("./spiderman.jpg");
+
+background-repeat: use to full selector background with repeated the image vertically and horizontally
+  :repeat; = default use to repeat the image vertically and horizontally
+    background-repeat: repeat;
+  :no-repeat; = use to deleted all repeated images in background 
+    background-repeat: no-repeat;
+  :repeat-x; use to repeat the image horizontal only in the background
+    background-repeat: repeat-x;
+  :repeat-y; use to repeat the image vertical only in the background
+    background-repeat: repeat-y;
+
+background-attachment: use to control the background image to move with scrolling or not
+  scroll; = default the image do not move in background with scrolling
+  Ex:/
+    background-attachment: scroll;
+  fixed; =  the image move in background with scrolling
+  Ex:/
+    background-attachment: fixed;
+
+background-position: use to control the place of the background image inside the selector
+  center top; = use top bottom center left right to move the image 
+  EX:/
+    background-position: top center;
+  0% 50%; use % to move the image
+  Ex:/
+    background-position: 10% 20%;
+  30px 100px; use px to move the image
+  Ex:/
+    background-position: 40px 20px;
+
+background-size: use to control the size of the image inside selector background 
+  auto; default the normal size of the image
+  Ex:/
+    background-size: auto;
+  100% 50%; use % to control the image size inside the selector background (vertical horizontal)
+  Ex:/
+    background-size: 50% 10%;
+  cover; the image cover fully with starching in the background of the selector
+  Ex:/
+    background-size: cover;
+  contain; the image contain fully without starching in the background of the selector
+  Ex:/
+    background-size: contain;
+
+Shorthand: Background:
+  background-image
+  background-position 
+  background-size
+  background-repeat
+  background-attachment
+  background-origin
+  background-clip
+  background-color
+
+*/
+
+/*   Padding
+
+padding: use to add space inside the selector
+  0px 0px 20px 0px; = top left bottom right
+  padding-top: 
+    10px;
+    20%
+  padding-right:
+    10px;
+    20%  
+  padding-bottom:
+    10px;
+    20%  
+  padding-left:
+    10px;
+    20%
+
+Shorthand Padding:
+  padding-top
+  padding-right
+  padding-bottom
+  padding-left
+
+*/
+
+/*   Margin & Margin Collapse
+
+margin: use to add space outside the selector
+  0px 10% -15px 5%; = top left bottom right
+  auto auto; use to make the selector at the middle in parent element
+  margin-top: 
+    10px;
+    -20%;
+  margin-right:
+    10px;
+    -20%;
+  margin-bottom:
+    -10px;
+    -20%;
+  margin-left:
+    10px;;
+    -20%;
+  margin: 
+    auto;
+
+Shorthand margin:
+  margin-top
+  margin-right
+  margin-bottom
+  margin-left
+
+Not: 
+margin can take negative value
+
+
+Margin Collapse: use in vertical margin
+* Note *
+- collapse works only in vertical margin
+- bigger margin wins
+- must not there any element between the two selectors
+- collapse work with nesting but , without any layout for the parent
+
+*/
+
+/*   Border
+
+  border-width: use add border size
+    10px;
+    10%;
+  border-style: use to add border type
+    solid;
+    hidden;
+    dashed;
+  border-color: use to add border color
+    black;
+Shorthand border:
+  border-width
+  border-style
+  border-color
+
+Border Radius
+border-top-left-radius: 
+  10px 10px;
+border-top-right-radius: 
+  10px 10px;
+border-bottom-right-radius: 
+  10px 10px;
+border-bottom-left-radius: 
+  10px 10px;
+
+*/
+
+/*   Outline
+
+outline: use to add line around the selector
+  outline-color: use to add color for the outline
+    aqua;
+  outline-width:  use to add size for the outline
+    10px;
+    10%;
+  outline-style:  use to add style for the outline
+    auto;
+    solid;
+    hidden;
+    dashed;
+    groove;
+  outline-offset: the distance between element outline and element border
+    10px;
+
+Shorthand outline:
+  outline-width
+  outline-style
+  outline-color
+
+Not: 
+- can't control the four sides in color and style of selector as the border
+- not include radius
+- outline size not count with element size
+
+*/
+
+/*   Display
+
+
+display: 
+  block;
+  inline;
+  inline-block;
+  none;
+
+Not: 
+block  
+  - take full width if there no width
+  - can not be with other elements in same line
+  - respect width and height
+  - respect padding, margin 
+inline
+  - do not take full width
+  - can be with other elements in same line
+  - do not respect width and height
+  - respect padding and margin {left and  right only}
+inline-block
+  - do not take full width
+  - can be with other elements in same line
+  - respect width and height
+  - respect padding, margin 
+none
+- can not see the selector and do not save the place in the web page
+
+
+*/
+
+/*   Visibility
+
+visibility: use to make the selector not visible and save the space of the selector
+  visible; = default can see the selector
+  hidden; = can not see the selector ,but save the place of the selector in web page
+
+*/
+
+/*   Grouping Selectors
+
+grouping: use to add same properties to more than one selector
+EX:/
+  p,
+  div,
+  h2 {
+    color: red;
+    display: block;
+  }
+
+*/
+
+/*   Nesting
+
+nesting: use to target child selector by targeting the parent selector
+Ex:/
+  nav div span {
+  background-color: red;
+  font-size: bold;
+  }
+
+*/
+
+/*   Width & Hight
+
+use to control the dimension of the selectors
+EX:/
+  width: 
+    fit-content; 
+  min-width: 
+  max-width: 
+  min-hight: 
+  max-hight: 
+
+*/
+
+/*  Over Flow
+
+overflow-x: control the horizontal
+  hidden;
+  scroll;
+  auto;
+overflow-y: control the vertical
+  hidden;
+  scroll;
+  auto;
+overflow: both x and y
+  hidden;
+  scroll;
+  auto;
+
+text-overflow: add ... to show that the text not finish
+  ellipsis;
+
+
+white-space: nowrap 
+  wrap;
+
+word-break:   break the word before white space (use with links)
+  break-word;
+  break-all;
+  normal;
+
+*/
+
+/*   Shadow
+
+text-shadow: use to add shadow for the text
+  x-axises y-axises blur color; =
+  x-axises y-axises blur color, x-axises(horizontal) y-axises(vertical) blur color, axises(horizontal) y-axises(vertical) blur color;
+Ex:/
+  p {
+    text-shadow: 1px 1px 2px red, 2px 2px 4px green;
+  }
+
+box-shadow: 
+  x-axises y-axises blur(الضبابيه) spread(نسبة الانتشار) color outset/inset(داخلي/خارجي);
+  x-axises y-axises blur color inset, x-axises y-axises blur color inset, x-axises y-axises blur color inset;
+
+*/
+
+/*  Text Alignment
+
+color: the color of the text of the selector
+Ex:
+  p {
+    color: brown;
+  }
+  
+direction: direction of the web page , left to right or right to left
+  ltr;  (default)
+  rtl;
+
+text-align: the position of the text of the selector
+  start;
+  end;
+  left;
+  right;
+  center;
+Ex: 
+  p {
+    text-align: center;
+  }
+
+vertical-align:  the position of the text in vertical axises
+  top;
+  middle;
+  bottom;
+
+
+text-decoration:  add or remove line in text
+  line-through;
+  overline;
+  underline;
+  none;
+
+text-transform:  change text letters to capital or small
+  capitalize;
+  uppercase;
+  lowercase;
+  none;
+
+letter-spacing:  space between the letters
+
+word-spacing:  space between the words
+
+line-height: the height between the text  
+
+text-indent:  the space before the text
+
+white-space: use to don't let the text wrap to the other line
+  nowrap;
+
+text-overflow: use to cut the overflow text and add ...
+  ellipsis;
+
+*/
+
+/*  Font 
+
+font-family: use to choose main font for the selector
+  - serif : with (كسره) in the end of the letter
+  - san-serif : without (كسره) in the end of the letter
+Ex:/
+p {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+can use google fonts by using web fonts url
+
+font-size: 
+  10vw;
+  smaller;
+  larger;
+
+
+font-weight:
+  normal; normalize the weight
+  bold;
+
+font-style: 
+  italic;
+  oblique;
+  normal;
+
+font-variant:  uppercase but small
+  small-caps;  all letters capital but small size
+  normal;
+
+shortcuts:
+font:font-style font-weight font-size font-family; 
+*/
+
+/*  Css Units 
+
+px => . (dot) ex: 20px = 20 dot
+em => parent size  ex: 2em = 2 x parent size  
+rem => root size (html = 16px(df)) ex: 2rem = 32px
+vw => view width or view size (100vw = 100%) ex: parent = 900px   child = 5vw  child = 0.05 * 900 = 45px
+vh => view height ex: 15vh = 15% from web page height
+vmin ??
+
+*/
+
+/*  Cursor
+
+cursor: use to show action in selector when hover in it
+  alias;
+  pointer;
+  grab;
+  wait;
+Ex: 
+p {
+  cursor: pointer;
+}
+
+*/
+
+/*   Float & Clear
+
+float: use to design selectors
+  left; 
+  right;
+
+clear: use to stop the floating selectors
+  both;
+  left; 
+  right;
+
+* Note * 
+- float property write in the child's
+- add anther element brother to the floating elements to stop the float using clear
+Ex:/
+  <div class="parent">
+      <div>div 1</div>
+      <div>div 2</div>
+      <div>div 3</div>
+      <div>div 4</div>
+      <p class="clear"></p>
+  </div>
+  <p>after the float</p>
+
+  .parent {
+    padding: 10px;
+    background-color: red;
+}
+.parent div {
+    background-color: #eee;
+    padding: 10px 0px;
+    color: red;
+    text-align: center;
+    float: left;
+    width: 25%;
+}
+.parent .clear {
+    clear: both;
+}
+*/
+
+/*   Calculation
+calc(): use make dimension with calculation 
+Ex:/ 
+  width: calc((100% - 90px) / 5);
+
+*/
+
+/*  Opacity
+
+opacity:  transparent the selector and everything in it
+  0.5; = 1 > opacity
+* Note *
+- opacity problem : when make parent opacity all child's will be opacity also 
+- solve : rgba 
+*/
+
+/*  Position & Z-index
+
+position: use to control selector in the web page
+  static; (default) normal position of the selector in the web page 
+  relative; use to move the selector starting from his place
+  absolute; move the element starting from the relative selector parent
+  fixed; move the selector starting from the web page and will never disappeared when there are scrolling action
+  sticky; move the selector starting from the web page and will never disappeared when there are scrolling action after position the selector (top or bottom , left or right)
+* Note * 
+- relative selector save the value of the distant and other are not
+- fixed property makes selector inline-block
+
+z-index: 
+  222;
+* Note * 
+- z-index work with position selector only
+- if selector get -1 z-index , it will became the last from down
+
+*/
+
+/*  List Style
+
+list-style-type: use to change shape of the dotes
+  circle;
+  lower-alpha;
+  georgian;
+
+list-style-position:  the list-style-type inside or outside the selector
+  inside;
+  outside;
+
+list-style-image:  add image as list-style-type
+  url();
+
+list-style: use to delete all the styles
+  none;  
+
+*/
+
+/* Table
+
+border-spacing: the the borders width around the td of the table
+caption-side: top(caption above the table) bottom(caption under table);
+vertical-align:top middle bottom (where is text inside the box); 
+
+*/
+
+/* Pseudo Classes
+
+:hover  use when the mouse go over the selector 
+:checked  use when the selector checked
+:visited  use when the selector(link) have been opened
+:empty  use whe the selector is empty
+:focus  use when the selector(input filed) focused in
+
+*/
+
+/*  Pseudo Elements & Content
+
+::first-letter  use to control first letter in selector
+::first-line  use to control first line in selector
+::selection  use to control  the color of the letters and background-color that selected
+Ex:/
+  .parent::selection {
+    background-color: black;
+    color: gold;
+  }
+::before  use to cerate pseudo element before the selector 
+::after  use to cerate pseudo element after the selector
+
+The uses of content:
+- content can use for add string to the selector
+Ex:/
+  .child::before {
+  content: "add string";
+  }
+- content can be used as counter
+counter-increment:  a property add to the parent selector
+  users-count;  name of the counting counter
+Ex:/  
+  .parent {
+    counter-increment: num-of-users;
+  }
+  .child's::after {
+    content: counter(num-of-users);
+  }
+- content can use for display attribute value
+Ex:/
+  <body>
+    <div my-data="melfatih841"><div/>
+  <body/>
+  div::after {
+  content: attr(my-data);
+  }
+- content can be used for add url(web page, img, audio, video) 
+Ex:/
+  span::after {
+  content: url(https://google.com); 
+  }
+
+
+
+:root
+:checked
+:empty
+:disabled
+:required
+:read-only
+:focus
+::selection
+::placeholder
+
+*/
+
+/*  Vendors prefixes
+
+-webkit- => chrome, safari, new opera version
+-moz- => firefox
+-ms- => ie, edge
+-o- => old version of opera
+* Note *
+- use:( can i use ).com to now the feature that need prefix
+- in futura you use task runner and will write all prefix automatically
+
+*/
+
+/*  Box Sizing
+
+box-sizing:  use to merge the border and the padding width and hight with the main width and hight of the selector
+  content-box;(default)  border and padding change width and hight
+  border-box;  border and padding will not change width and hight
+* Note * 
+- most right the width and hight to the selector 
+
+*/
+
+/*  Transition
+
+transition-property:  use to add the properties that change in hover
+  background-color; 
+
+transition-duration:  use to control the time will take to do the transition
+  0.5s;
+
+transition-delay:  use to control the time the selector wait before do the transition
+  2s;
+
+transition-timing-function: use to control the speed will changing
+  linear;  = = =>
+  ease;  + - +>
+  ease-in;  + - ->
+  ease-in-out; - + ->
+
+Shorthand transition:   
+  transition-property
+  transition-duration
+  transition-delay
+  transition-timing-function
+  Ex:/
+  background-color 0.5s 2s, margin 1s  1.5s , height 1.5s 1s, width 2s 0.5s;
+
+*/
+
+/*  Important Flag
+
+use to make over right of the old css files
+Ex:/
+  div {
+    background-color: blue !important;
+  }
+
+*/
+
+/*  Css Variable
+
+:root {
+  --mainColor: gold;
+  --mainBackgroundColor: #222;
+  --firstPadding: 20px;
+}
+.main {
+  background-color: var(--mainBackgroundColor, #eee);
+  color: var(--mainColor, #abc);
+  padding: var(--firstPadding)
+}
+
+* Note *
+- Global Variable
+Ex:/
+:root {
+  --mainPadding: 10px;
+}
+- Local Variable
+Ex:/
+  .spacial {
+    --mainPadding: 10px;
+    padding: var(--mainPadding);
+  }
+*/
+
+/*   Filter(effects)
+
+filter: add effect to the selector
+  blur(5px); 
+  grayscale(90%);
+  drop-shadow(10px 10px 10px #222);
+  invert(100%);
+
+*/
+
+/*   Gradient
+
+background-image: linear-gradient(to right or 45deg, var(--mainColor2, black) 2%, var(--mainColor1, yellow) 8%,
+  var(--mainColor2, black) 10%, var(--mainColor1, yellow) 18%,
+  var(--mainColor2, black) 20%, var(--mainColor1, yellow) 28%,
+  var(--mainColor2, black) 30%, var(--mainColor1, yellow) 38%,
+  var(--mainColor2, black) 40%, var(--mainColor1, yellow) 48%,
+  var(--mainColor2, black) 50%, var(--mainColor1, yellow) 58%,
+  var(--mainColor2, black) 60%, var(--mainColor1, yellow) 68%,
+  var(--mainColor2, black) 70%, var(--mainColor1, yellow) 78%,
+  var(--mainColor2, black) 80%, var(--mainColor1, yellow) 88%,
+  var(--mainColor2, black) 90%, var(--mainColor1, yellow) 98%);
+Ex:/
+.gradient {
+    width: 400px;
+    height: 200px;
+    margin: 10px auto;
+    padding: 10px;
+    position: relative;
+    background-color: blue;
+    color: #fff;
+}
+.gradient::before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    top: -5px;
+    left: 0px;
+    background-image: linear-gradient(to right, #E91E63 10%, #9C27B0 10%, #673AB7 20%, #CDDC39 20%, #CDDC39 30%, #009688 30%, #009688 40%, #F44336 40%, #F44336 50%, #03A9F4 50%, #03A9F4 60%, #9C27B0 60%, #9C27B0 70%, #2196F3 70%, #2196F3 80%, #9E9E9E 80%, #9E9E9E 90%, #F44336 90%);
+}
+*/
+
+/*   Caret Color & Pointer Event
+
+caret-color:  use to change the line color in the input field
+  red;
+
+pointer-event:  use to enable or cancel the event
+  auto;
+  none;
+
+*/
+
+/*   Flex Box
+
+- Parent Selector:
+display:  
+  flex; use to make the child's flex 
+  inline-flex; use to make the child's flex and parent selector inline
+
+flex-direction: direction of the flow
+  row; use to make the child's in order in row
+  row-reverse; use to make the child's reversed in row
+  column; use to make the child's in order in column
+  column-reverse; use to make the child's reversed in column
+
+flex-wrap: use to make the child's jump to next line or not
+  nowrap;  use to will not make the child's jump to next line
+  wrap;  use to make the child's jump to next line
+  wrap-reverse;  use to make the child's jump to next line reversed
+
+- Shorthand flex-flow:
+  flex-direction
+  flex-wrap
+
+justify-content:  use to control x-axis(horizontal), all content of the parent wrap to main direction
+  flex-start; the content elements start the wrap from start   (horizontal)
+  center;   the content elements start the wrap from the center  (horizontal)
+  flex-end; the content elements start the wrap from the end  (horizontal)
+  space-between; use to make a space between only content 
+  space-around; use to make a space around only content  
+  space-evenly; use to make a space between and around content 
+  stretch;
+
+align-items: use to control y-axis(vertical), all child of the parent wrap to main direction
+  flex-start; the child's elements start the wrap from start  (vertical)
+  center; the child's elements start the wrap from the center  (vertical)
+  flex-end; the child's elements start the wrap from the end  (vertical)
+  stretch;
+
+align-content:  use to control y-axis(vertical), all content of the parent wrap to main direction
+  flex-start; the content elements start the wrap from start   (vertical)
+  center;  the content elements start the wrap from the center  (vertical)
+  flex-end; the content elements start the wrap from the end  (vertical)
+  space-between; use to make a space between only content 
+  space-around; use to make a space around only content  
+  space-evenly; use to make a space between and around content 
+  stretch;
+
+* Note *
+- use align-items or justify-content (justify-content is stronger than align-items)
+
+
+- Child's Selectors:
+
+flex-shrink: decries selector width if there are space
+  3;
+flex-grow:  increases element width if there are space
+  2;
+order: change order of selector
+  5;
+flex-basis:  work as width if flex-direction: row, work as hight if flex-direction: column,
+  250px;
+align-self:  use to control one selector different than other selectors child's 
+  flex-end;
+  stretch;
+  center;
+
+- Shorthand:
+flex:
+  flex-grow;
+  flex-shrink;
+  flex-basis;
+
+* Note *
+- in order: if wont to change last element to first element , have to change order for all first elements or change order to -1
+- in flex-basis: respect max-width and max-height
+
+*/
+
+/*   Grid
+
+
+- Parent Selectors:
+display: 
+  grid;
+  inline-grid;
+
+grid-template-columns:  number of columns with sizing the width for each column
+  10% 200px 1fr repeat(2, 100px) auto;
+grid-template-rows:  number of rows and height sizes of the rows
+  100px 1fr auto;
+
+row-gap: use to make gaps between rows
+  10px;
+column-gap: use to make gaps between columns
+  10px;
+- shorthand:
+gap: 
+  row-gap 
+  column-gap;
+
+justify-content:  all content of the parent row flow
+  flex-start; 
+  center;  
+  flex-end; 
+  space-between; 
+  space-around;
+  space-evenly;  
+  stretch;
+* Note *
+- if the width of th columns auto , justify-content make width = content only
+
+align-content: 
+  flex-start;
+  center;   
+  flex-end;
+  space-between; 
+  space-around; 
+  space-evenly;  
+  stretch;
+* Note *
+- if the hight of th rows auto , justify-content make hight = content only
+
+grid-template-areas:  use to save selectors in variables and order the selectors in the columns
+grid-area: contain the variable
+Ex:/
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-areas: 
+  "logo nav nav nav nav"
+  "section section section . aside"
+  "footer footer footer footer footer";
+}
+.logo {
+  grid-area: logo;
+  background-color: red;
+  color: azure;
+  text-align: center;
+}
+.nav {
+  grid-area: nav;
+  background-color: blue;
+  color: azure;
+  text-align: center;
+}
+.section {
+  grid-area: section;
+  background-color: brown;
+  color: azure;
+  text-align: center;
+}
+.aside {
+  grid-area: aside;
+  background-color: green;
+  color: azure;
+  text-align: center;
+}
+.footer {
+  grid-area: footer;
+  background-color: #222;
+  color: azure;
+  text-align: center;
+}
+* Note *
+- . = empty column 
+
+
+- child's selectors:
+grid-column-start: start position in which column
+  1;
+grid-column-end:  end position in which column
+ 3;
+- Shorthand: 
+grid-column: 
+  2 / 3;
+  span 3;
+  1 / span 3;
+
+grid-row-start:  start position in which row
+  2;
+grid-row-end:  end position in which row
+  5;
+- Shorthand:
+grid-row: 
+  1 / 3;
+  span 3;
+  1 / span 3;
+
+grid-area: 
+  grid-row-start 
+  grid-column-start 
+  grid-row-end 
+  grid-column-end;
+
+
+Responsive:
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr);
+* Note *
+- what is different between auto-fill and auto-fate?
+- what is ch?
+
+*/
+
+/*   Transform
+
+.                                              2D Transform
+
+transform: change from status to another
+  scaleX(2);  x vertical التمدد في محور 
+  scaleY(2);  y horizontal التمدد في محور 
+  scale(4, 2);
+* Note * 
+-  scaleX(-1); flip the content
+
+transform: 
+  rotate(360deg or 6.28rad or 400grad or 1turn); عدد اللفات للعنصر
+  rotateX(-180deg);
+  rotateY(1turn);
+
+- Shorthand: 
+transform: 
+  scale (X, Y) rotate(0deg);
+
+transform: x او y تحريك العنصر على المحور
+translateX(-50%);
+translateY(-50%);
+translate(-50%, -50%);
+
+transform: x او y انحراف العنصر على المحور
+  skewX(10deg);
+  skewY(10deg);
+  skew(10deg, 10deg);
+
+- Shorthand: 
+transform:
+  translateX(20px) translateY(30px) scaleX(2) skewY(30deg)) skewX(90deg) scaleY(3);
+transform:
+  matrix(scaleX(2), skewY(tan(180)), skewX(tan(90)), scaleY(3), translateX(20), translateY(30));
+Ex:/
+p {
+  transform: matrix(1, 0, 0, 1, 0, 0)
+}
+or 
+p {
+  transform: translateX(20px) translateY(30px) scaleX(2) skewY(30deg)) skewX(90deg) scaleY(3);
+}
+
+transform-origin:  the center of element position
+  center bottom;
+
+
+
+.                                              3D Transform
+
+transform: 
+  rotate3d(X, Y, Z, 45deg);  
+Ex:/
+  div {
+    transform: rotate3d(0, 1, 1, 280deg);
+  }
+  
+  transform: translate3d(X, Y, Z);
+  translateX(-50%);
+  translateY(-50%);
+  translateZ(-50%);
+Ex:/
+  div {
+  transform: rotate3d(0px, 10px, 10%);
+  }
+  
+transform: change from status to another
+  scaleX(X, Y, Z);  
+  scaleX(2);  
+  scaleY(2);  
+  scaleZ(2);   
+  scale(4, 2, 0);
+Ex:/
+  div {
+    transform: scale3d(1, 0.5, 1);
+  }
+    
+- Shorthand: 
+transform: 
+  scale (X, Y) rotate(0deg);
+
+transform-origin:  the center of element position
+  center bottom;
+
+  - Shorthand: 
+transform:
+  translateX(20px) translateY(30px) scaleX(2) skewY(30deg)) skewX(90deg) scaleY(3);
+transform:
+  matrix(scaleX(2), skewY(tan(180)), skewX(tan(90)), scaleY(3), translateX(20), translateY(30));
+  transform: translate3d(0, 0, 100px);
+
+perspective: (write in parent of the element) يجب ان تكتب لاظهار البعد الثالث , وهي التي تحدد بها الماسفه بينك و العنصر , و القيمه الكتوبه هي نقطة التلاشي
+  150px;
+perspective-origin:  (write in parent of the element) تحدد بيها زاوية المنظور
+  center top;
+
+backface-visibility: use to choose to see the selector if it make a flip with rotate or not  (see the back of the element or not)
+  visible;  (default) yes, see the back
+  hidden;  (default) no, don't see the back
+
+transform-style:  يستخدم لحفظ جميع العناصر المعمول لها ترانسفورم داخل العنصر
+  flat;  (default) don't save
+  preserve-3d;  save
+
+
+Transform Ex:/
+  <div class="container4">
+      <div class="box4">
+          <div class="face4 front4">Front</div>
+          <div class="face4 back4">Back</div>
+      </div>
+  </div>
+  .container4 {
+    margin: 40px auto;
+    width: 200px;
+    perspective: 800px;
+    perspective-origin: left bottom;
+}
+.box4 {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+.box4:hover {
+    transform: rotateY(180deg);
+}
+.box4 .face4 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 10px;
+    backface-visibility: hidden;
+}
+.box4 .front4 {
+    background-color: blue;
+}
+.box4 .back4 {
+    background-color: red;
+    transform: rotateY(180deg);
+}
+
+*/
+
+/*   Animation
+
+animation-name: use to save name for the animation to use it in the keyframe
+  changeColor;
+
+animation-duration:  the time that will take to make the animation
+  10s;
+
+@keyframes it the frames of the animation
+  changeColor {}
+
+animation-iteration-count:  use to make animation more than one time
+  infinite;
+  2;
+
+animation-timing-function: use to control the move of the animation
+  linear;  
+  ease;  
+  ease-in;  
+  ease-in-out; 
+
+animation-direction:  use to control the animation direction
+  normal;
+  reverse;
+  alternate;  up to down
+  alternate-reverse;  down to up
+
+animation-delay: 
+  2s;
+
+animation-fill-mode: 
+  forwards; the selector property stop in 100%
+  backwards; the selector property stop in 0%
+  both; the selector property according to the end of the direction
+
+animation-play-state: use to stop the animation in specific time, usually use in hover
+  running;  (default) running
+  paused;  stop
+
+- Shorthand
+animation: 
+  keyframes(name) 
+  animation-duration 
+  animation-timing-function 
+  animation-delay 
+  animation-iteration-count 
+  animation-direction;
+
+Ex:/
+  <div class="container5">
+      <div class="one5"></div>
+      <div class="two5"></div>
+      <div class="three5"></div>
+  </div>
+  .container5 div {
+    width: 20px;
+    height: 20px;
+    background-color: orchid;
+    display: inline-block;
+    margin: 0px 5px;
+    border-radius: 50%;
+    animation-name: up-and-down;
+    animation-duration: 0.9s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+  }
+  .two5 {
+      animation-delay: 0.3s;
+  }
+  .three5 {
+      animation-delay: 0.6s;
+  }
+  @keyframes up-and-down {
+      to {
+          opacity: 0.2;
+          transform: translateY(-20px);
+      }
+  }
+
+* Note * 
+- cubic-bezier ?
+*/
+
+/*   Selectors
+
+Basic:
+* {} = all elements in the web page
+div {} = any div in the web page
+div p {} = any paragraph inside div and maybe there other elements between them
+.container {} = any element have this class name
+#page1 {} = any element have this id name
+.class-one.class-two {} = any element have both class names at the same time
+p.class-one {} = only the paragraphs that have this class name
+.class-ten > .class-two {} = any parent element have class-ten class name and target direct element child have class name  class-two 
+p + div {} = target only direct next div brother for the p
+p ~ div {} = target all div's brothers for the p
+
+Attribute:
+[type] {} = target any elements have this attribute type 
+input[type] {} = target input elements have this attribute type 
+[type="number"] {} = target any elements have this attribute type and the value number
+input[type="number"] {} = target input elements have attribute type and the value number
+input[type~="number"] = target input elements have attribute type and the value have word number
+input[type*="ber"] = target input elements have attribute type and the value have letters ber
+input[type^="num"] = target input elements have attribute type and the value letters start with num
+
+Child:
+p:first-child {} = only direct first p child in the parent element 
+p:last-child {} = only direct last p child in the parent element
+p:only-child {} = the only p child in the parent element without any other child's 
+p:nth-child(3) {} = target child number 3 his type is p
+p:nth-last-child(3) {} = target child number 3 from last his type is p
+
+!!  child see all elements type, type see only target type  !!
+
+Type:
+p:first-of-type {} = first p child type in the parent element    
+p:last-of-type {} = last p child type in the parent element
+p:only-of-type {} = only p child in the parent element, and maybe there other child's but not p
+p:nth-of-type(3) {} =  target the third p element
+p:nth-last-of-type(3) => target the third from last p element
+
+Not: 
+:not()
+:not(p:first-child) = any element p type ,but only not first direct p child in the parent element
+
+Ex:/
+<p>Testing</p>
+<div>Testing</div>
+<div>Testing</div>
+<div title="Elzero">Elzero</div>
+<div title="Hello">Elzero</div>
+<div title="HTML">Elzero</div>
+<div>Testing</div>
+<div class="no-need" title="Elzero">Testing</div>
+<div class="parent">
+  <div>Testing</div>
+  <p>Testing</p>
+  <div>Testing</div>
+  <div title="Elzero">Testing</div>
+  <div>Testing</div>
+  <div title="Elzero">Testing</div>
+</div>
+body > div[title]:not(div:nth-last-child(3)) {
+    color: red;
+}
+*/
+
+/*   Responsive
+
+@media (max-width: 767px) {}
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {}
+
+*/
+
+/*  Css New Features
+
++ Nesting Module: use to make nesting selectors without sass preprocessor
+Ex:/
+  <div class="parent"> Parent
+    <div class="child"> Child
+      <span>Info</span> 
+    </div>
+  </div>
+  .parent {
+    color: red;
+    .child {
+        color: blue;
+        & span {
+            color: green;
+        }
+        &:hover span {
+            color: gold;
+        }
+    }
+  }
+
+
++  Border Block: use to make border up and down in horizontal or vertical mode
+  writing-mode: use to make text horizontal or vertical
+    vertical-lr;
+    horizontal-lr;
+Ex:/
+  <p>hello elements</p>
+  p {
+      color: red;
+      font-size: 50px;
+      writing-mode: vertical-lr;
+      border-block-start: 2px solid black;
+      border-block-end: 2px solid black;
+  }
+
+
++  where Pseudo Element: use to target same selector in same parent in different parent child's
+Ex:/
+  <div class="parent">
+    <h1>
+      Head 
+      <a href="#">Link</a>
+      <span>Span</span>
+    </h1>
+  </div>
+  <div class="parent">
+    <div>
+      Div 
+      <a href="#">Link</a>
+      <span>Span</span>
+    </div>
+  </div>
+  <div class="parent">
+    <p>
+      Paragraph 
+      <a href="#">Link</a>
+      <span>Span</span>
+    </p>
+  </div>
+  .parent:where(h1, div, p) a {
+    color: aqua;
+  }
+    or target more than one selector
+  .parent:where(h1, div, p) :where(a, span) {
+      color: aqua;
+  }
+
+
++ Text Wrap Balance: use to make long text wrap equally in each line
+Ex:/
+  <p>
+    Lorem ipsum dolor sit amet, 
+    consectetur adipisicing elit. Praesentium sapiente 
+    laudantium quibusdam asperiores deleniti voluptatem 
+    nam reiciendis veniam et! At alias iusto ipsa assumenda
+    id provident laudantium, libero sunt aliquid.
+  </p>
+  p {
+    color: #fff;
+    background-color: #222;
+    width: 300px;
+    text-wrap-style: balance;
+  }
+
+
++ Has Pseudo Class: use to make condition for target main parent selector
+.parent:has(a, span) = does the parent have a (or) span child's
+.parent:has(a):has(span) = does the parent have a (and) span child's
+Ex:/
+  <div class="parent">parent
+    <a href="#">link</a>
+    <span>span</span>
+    <br>
+    <form action="#" style="margin: 10px;">
+    <input type="checkbox" name="os" id="">
+    </form>
+  </div>
+  <br>
+  <div class="parent">parent
+    <a href="#">link</a>
+    <form action="#" style="margin: 10px;">
+    <input type="checkbox" name="os" id="">
+    </form>
+  </div>
+  <br>
+  <div class="parent">parent
+    <form action="#" style="margin: 10px;">
+    <input type="checkbox" name="os" id="">
+    </form>
+  </div>
+  or condition
+  .parent:has(a, span) {
+    border: 2px solid #444;
+  }
+  and condition
+  .parent:has(a):has(span) {
+    border: 2px solid #444;
+    &:hover span {
+        color: green;
+    }
+    & form:has(:checked) {
+        border: 2px solid #444;
+    }
+  }   
+
+
++ Nth Child Of: use to target child's by main class order not counting
+Ex:/
+  <div class="parent">
+    <div class="element">Element</div>
+    <div class="element">Element</div>
+    <div class="element">Element</div>
+    <div class="box">Box</div>
+    <div class="box">Box</div>
+    <div class="box">Box</div>
+  </div>
+  :nth-child(2 of .element) {
+      color: greenyellow;
+  }
+  :nth-child(1 of .box) {
+      color: red;
+  }
+
+
++  Text Decoration: use to add or delete line in the text and control it
+    text-decoration-line: overline;
+    text-decoration-style: wavy;
+    text-decoration-color: aqua;
+
+
++  Current Color: use to inherit color from parent color and use it in every current-color property, if there is no color property in the selector
+Ex:/
+  <div class="parent">Parent
+      <div class="child">Child</div>
+  </div>
+  .parent {
+    color: red;
+    border:2px solid currentColor;
+    box-shadow: 2px 2px 1px currentColor;
+    & .child {
+      margin: 10px;
+      border:2px solid currentColor;
+      box-shadow: 2px 2px 1px currentColor;
+    }
+  }
+
+
+
++ Empty Pseudo Class: use to no the place of the empty elements
+Ex:/
+  <div class="alert">A alert</div>
+  <div class="alert">Another alert</div>
+  <div class="alert"></div>
+  <p></p>
+  <p>Paragraph</p>
+  <p></p>
+  body * {
+      margin: 10px auto;
+      padding: 10px;
+  }
+  :empty {
+      border: 2px solid red;
+  }
+
+
++  user-select: use to control user can select all or not text
+     none;
+     all; select all in one click
+
+
++  outline-offset: use to make space between selector and out line
+    2px;
+
+*/
+
+/*   Box model
+
+
+padding
+margin 
+border
+outline
+border-radius: 0%;
+border-radius: top-left top-right bottom-left bottom-right;
+box-shadow: x-shadow y-shadow blur(الضباب) spread(الانتشار) color inset or outset(df), x-shadow y-shadow blur(الضباب) spread(الانتشار) color inset or outset(df), ...ect ;
+resize(parent sizing): none(df) both(x and y axises) vertical(y axises) horizontal(y axises);
+box-sizing: content-box(df) border-box(padding and border take from the width of the element);
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+/*  Notes
+
+- Calc():  use to get dynamic value
+  width: calc((100% - 60px) / 6);
+
+- caret-color: the | when you wont to write
+  blue; 
+
+- pointer-event: cancel the event
+  none;
+
+
+
+
+
+
+
+
+*/

@@ -1,0 +1,380 @@
+command: الاوامر 
+shell: interpret(مترجم الاوامر)
+terminal: input and output enviroment
+cmd: original microsoft shell
+powerShell: other microsoft shell more powerful
+
+
+--help : helper about command
+command /? : info about the command
+Ex:/
+move /?
+* Note * 
+- work with commandline of Windows only
+clear & cls : clear window
+
+
+- New directories انشاء ملفات في النظام 
+cd .. : return to the father dir
+cd  : go inside dir
+cd \ : go to root dir
+md : make new dir
+mkdir : make new dir
+mkdir ..\ : make new dir in parent directory
+dir : show all directory
+touch : create empty file 
+ls : show all directory
+ls -a : show folder(directory) and hidden folder(directory)
+move : move or rename dir
+mv : move or rename dir
+Ex:/
+C:\cmder\myFolders
+λ mv test test2
+rename : rename dir
+cp : copy dir
+cp -r : copy dir with dirs in it
+rm : remove dir
+rm -r : remove dir with dirs in it
+rm -d : remove dir without dirs in it(empty)
+
+
+- Echo & cat
+echo : print string in console or in one file
+Ex:/
+C:\cmder\myFolders\test2
+λ echo "hello"
+"hello"
+Ex:/ add string in text file (overright) or create file if there not
+C:\cmder\myFolders\test2
+λ echo "hello" > new.text
+Ex:/ add string in text file (overright) or create file if there not
+C:\cmder\myFolders\test2
+λ echo "hello" >> new.text
+* Note * 
+- >> add string to other string
+- > overright string
+cat : use to print text files and marg text files 
+Ex:/
+C:\cmder\myFolders\print
+λ cat new.text last.text > all.text
+C:\cmder\myFolders\print
+λ cat all.text
+"hello Again"
+"good bay"
+""
+"cat"
+* : select all
+
+
+
+- Grep 
+grep : use to search for string in the files
+Ex:/
+C:\cmder\myFolders\print
+λ grep "oo" all.text
+"goodby"
+Ex:/
+C:\cmder\myFolders\print
+λ grep "oo" -r
+all.text:"goodby"
+myNewFolder/new.text:"helloo"
+new.text:"goodby"
+Ex:/
+C:\cmder\myFolders\print
+λ grep "oo" -r -l
+all.text
+myNewFolder/new.text
+new.text
+* Note *
+-r : main directory child's and child's of child's
+-l : listed the result
+
+
+
+file : type of the file or empty
+Ex:/
+C:\cmder
+λ file *
+Cmder.exe:          PE32 executable (GUI) Intel 80386, for MS Windows, 5 sections
+LICENSE:            ASCII text, with CRLF line terminators Version 1.3.25.328: empty
+bin:                directory
+config:             directory
+* Note *
+- file nows file type  by head content of the file not by path
+
+control-C in keyboard: stop infinite information, ex: ping www... -t
+
+tree a/ : show the child's in tree style
+
+tasklist : show all the tasks works in background
+* Note * 
+- who to kill process?
+
+make two command together , by add && between two commands
+Ex:/
+C:\cmder\myFolders
+λ mspaint && mkdir newF
+
+alias name=command : summary long command
+
+explorer : open file or directory
+command ..\father_dir : make direct command from child dir to other dir
+command root_dir\ : make direct command from child dir to root dir
+
+exit : close cmber console
+
+
+
+
+
+
+
+git & github :-
+
+now git version: معرفة نسخت القيت
+git -v
+git version 2.45.1.windows.1
+
+save user name: حفظ اسم المستخدم
+git config --global user.name "mo.el.dev0l0"
+show user name: عرض اسم المستخدم
+git config user.name
+
+save user email: حفظ ايميل المستخدم
+git config --global user.email "mo.el.dev0l0.gmail.com"
+show user email: عرض ايميل المستخدم
+git config user.email
+
+get all configs:
+git config --list
+
+show all git commands: عرض جميع اوامر القيت
+git
+
+Repository: container contains project code
+local repo: local repo in your device
+remote repo: the place that where you send task after finish(github, gitlab, other server)
+
+branch: take branch from the repo to make a task
+commit: check point after finish the task on local repo
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+.                                                                         .
+.         working         staging          local         remote           .
+.        directory         area            repo           repo            .
+.            |              |               |              |              .
+.            |----git add-->|               |              |              .
+.            |              |               |              |              .
+.            |              |--git commit-->|              |              . 
+.            |              |               |              |              .
+.            |              |               |---git push-->|              .
+.            |              |               |              |              .
+.            |              |               |              |              .
+.            |              |               |              |              .
+.            |              |               |              |              .
+.            |              |               |<--git fetch--|              .
+.            |              |               |              |              .
+.            |              |               |              |              .
+.            |<---------git checkout--------|              |              .
+.            |              |               |              |              .
+.            |              |               |              |              .
+.            |<---------git merge-----------|              |              .
+.            |              |               |              |              .
+.            |              |               |              |              .
+.                                                                         .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+local repo:
+create local directory: انشاء ملف بالقيت
+git init projectsBygit
+show repo commits: معرفة الملفات الغير محفوظه في الحاويه المحليه
+git status
+move file from working directory to stage area:
+git add index.html
+move file from stage area to working directory:
+git rm --cached index.html
+make commit:
+git commit -m "create index file"
+git log : show all the commits of the repo اظهار جميع اوامر الحفظ في الحاويه
+go back to old commit: الرجوع لنسخه اقدم
+git checkout "deb49cd54d983b0f073c4c6ea0510911aabf469b"
+
+Local Repo: 
+Branch & Merge:
+1- create branch:
+git branch myBranch
+2- view all branches
+git branch
+3- switch to your branch 
+git checkout myBranch
+4- add changes to files and add to stage area and commit 
+5- switch to main branch
+git checkout master
+6- merge your branch with main branch 
+git merge myBranch
+
+1- make sure that local repo connect with remote repo
+git
+
+
+Remote Repo:
+merge local repo with remote repo:
+git remote -v
+git remote remove origin
+git remote add origin url
+git push -u origin master
+git pull origin master
+
+
+
+
+
+
+
+
+
+-- git & github :-
+- repository: container of the project code
+- local repo: local repo in your device
+- remote repo: the place that where you send task after finish(github, gitlap, other servier)
+- branch: take branch from the repo to make a task
+- commit: check point after finish the task on local repo
+- clone: take copy from local or remote repo
+- push: upload the changes of the code from local repo to remote
+- pull: take changes of the code from remote repo to local
+- pull request: request to pull the code from local to remote 
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+.                                                                         .
+.         working         staging          local         remote           .
+.        directory         area            repo           repo            .
+.            |              |               |              |              .
+.            |----git add-->|               |              |              .
+.            |              |               |              |              .
+.            |              |--git commit-->|              |              . 
+.            |              |               |              |              .
+.            |              |               |---git push-->|              .
+.            |              |               |              |              .
+.            |              |               |              |              .
+.            |              |               |              |              .
+.            |              |               |              |              .
+.            |              |               |<--git fetch--|              .
+.            |              |               |              |              .
+.            |              |               |              |              .
+.            |<---------git checkout--------|              |              .
+.            |              |               |              |              .
+.            |              |               |              |              .
+.            |<---------git merge-----------|              |              .
+.            |              |               |              |              .
+.            |              |               |              |              .
+.                                                                         .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+
+
+git merge : concat new files from remote with files in local in same branch name
+git pull : git fetch + git merge
+
+git remote add origin gitHubeUrl
+
+
+Working directory:-
+git restore --staged fileName : return the file form stage area to working directory
+git clean -n : show the files that remove from working directory
+git clean -f : remove files from working directory
+git rm --cached fileName : return file from staged area to working directory
+
+
+Satging area:-
+git add : add the files from working directroy to staging area
+git reset head name.file : remove file from staging area
+
+
+Local repo:-
+git fetch : get the new changes in remote repo
+git push remoteName branchName --force : update local repo from remote repo
+touch .gitignore : create file to add in it the ignore files
+git remote add remoteUrlName Url : conect local repo with remote repo
+git remote set-url remoteUrlName Url : reset new remote repo url for local repo
+
+
+Remote repo:-
+git remote add remoteName https://www... : let remoteName = url
+git init : to creat a branch
+git clone https://www.... : copy github url repo
+git remote -v : show remote repo name
+git push remoteName branchName : push from local to remote repo
+git push -u remoteName branchName
+-u : pull then push (get changes files first)
+git remote -v : show fetch url and push url
+
+
+Branch:-
+git branch : show all branches names
+git branch branchName : add new branch
+git checkout branchName : go to other branch 
+git checkout -b branchName : add new branch and go to it
+git branch -m newBranchName : rename the branch 
+git branch -d branchName : delete branch after mergr it with main branch 
+git branch -D branchName : delete branch without mergr it with main branch 
+git push remoteName --all : push all branches to remote repo
+
+
+Commit:-
+git commit -m "discription" : save the files in local repo
+git commit -a remoteName branchName -m "massage" : use with modify files to jump from working directory to local repo
+git log : show all the commits of the repo
+git log --oneline : show summary commits(hash and massage)
+git reset commitHash : remove the commit and restore files to working directory
+git reset --soft commitHash : remove the commit and restore files to staging area
+git reset --hard commitHash : remove the commits above the target commitHash
+git checkout commitHash : show commit code
+git checkout branchName : show last code commited
+- commit contains:-
+-- commit hash
+-- author
+-- time and data
+-- massage
+-- complete snapshot : take copy of changes files but, can not read changes in binary files(audio, video, img, ..ect)
+so will take copy of all binary files
+
+
+Stash:-
+git stash : hide file in container 
+git stash save "discription" : hide the files in stash with massge
+git stash pop : get last files out from stash and delete the stash
+git stash apply : get copy of files without delete the last stash 
+git stash drop : remove last stash 
+git stash clear : remove all stashs
+git stash show : show last stash ditailes
+git stash list : show list of all stashs
+git stash stashCommand stash@{indexNumber} : git files by stash indexNumber
+
+
+Configration:-
+git config -l : all configration list 
+git config -l --show-origin: all configration sorces in list 
+git help config: open doc of configration
+git config --global user.name : show value of user.name
+git config --global user.name "Your Name" : add user name
+git config --global --unset user.name : remove value
+git config  --global alias.commandSummary "commandName": summary the command
+
+
+Tag:-
+git tag : show tags of repo 
+git tag tagName : add light weight tag
+git push remoteName branchName tagName : push with new tag (will take the commit massage as a tittle for the tag)
+git tag -a tagName -m "massage" : add unnoted tag 
+git tag -l "v1.*" : show list with all tags begin with "v1."
+git tag -d tagName : delete tag from local repo
+git push --delete tagName : delete tag from remote repo
+
+
+Others:-
+git status : to show tracking and untracking files
+code fileName : open file with application
+
+
+?? markdown lang 
+?? git alias list
