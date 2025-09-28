@@ -1,25 +1,21 @@
-document.querySelector("h1").style.color = "blue";
-window.alert("hello my friend");
-console.log("log");
-console.error("Error");
-console.table(["mo", "ali", "ahmed"]);
+let titleContent = "Elzero",
+  DesContent = "Elzero Web School",
+  DateContent = 25 / 10;
+let layOut = `
+<div>
+  <h3>Hello ${titleContent}</h3>
+  <p>${DesContent}</p>
+  <span>${DateContent}</span>
+</div>
+`;
+document.write(layOut.repeat(4));
+console.log(elzero.innerHTML); // object
+console.log(typeof elzero); // object
 console.log(
-  "hello my %cfri%cend",
-  "font-size:40px; color: red",
-  "font-size:40px; color: blue"
+  '`I\'m In \n \\\\ \nLove \\\\ """ \'\'\' \n ++ With ++ \n\\"""\\""" \n""JavaScript""``'
 );
-console.group();
-console.log("group 1");
-console.log("group 2");
-console.group();
-console.log("group 3");
-console.log("group 4");
-console.group();
-console.log("group 5");
-console.log("group 6");
-console.groupEnd();
-console.groupEnd();
-console.groupEnd();
-console.group();
-console.log("group 7");
-console.log("group 8");
+let a = 21;
+let b = 20;
+let aAndb = `${b}${a}_`.repeat(3);
+
+console.log(`_${a}_${aAndb}${b}`); // _21_2021_2021_2021_20_

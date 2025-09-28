@@ -44,23 +44,32 @@ console.log(
 
 */
 
-/*                                                   variables and data type
+/*  Data Types And Variable
 
 data type:
 - string
+console.log(typeof "mo elfatih");
 - number
+console.log(typeof 320);
 - boolean
-- array => object
+console.log(typeof true);
 - object
-- undefined
+console.log(typeof { name: "mo", age: 22, country: "egy" });
+- array => object
+console.log(typeof ["mo", "ali", 32, 44]);
 - null => object
-!!array and null defined as a object!!
+console.log(typeof null);
+- undefined
+console.log(typeof undefined);
 
-variables:
+* Note *
+- array and null defined as a object
+
+Variables:
 Var
-- Redeclare (Yes) قيمه جديده
-- Access Before Declare (Undefined) استعمل المتغير قبل اعطاء قيمه
-- Variable Scope Drama [Added To Window] (yes) اضافة المتغير لكأن النافذة
+- Redeclare(overright) (Yes)
+- Access(initialization) Before Declare (Undefined) 
+- Variable Scope Drama [Added To Window Object] (yes) اضافة المتغير لكأن النافذة
 - Block Or Scope Function
 
 - scope: global
@@ -70,9 +79,9 @@ Var
 
 
 Let
-- Redeclare (No => Error)
-- Access Before Declare (Error)
-- Variable Scope Drama (no)
+- Redeclare(overright) (No => Error)
+- Access(initialization) Before Declare (Error)
+- Variable Scope Drama [Added To Window Object] (no)
 - Block Or Scope Function
 
 - scope: local
@@ -82,9 +91,9 @@ Let
 
 
 Const
-- Redeclare (No => Error)
-- Access Before Declare (Error)
-- Variable Scope Drama (no)
+- Redeclare(overright) (No => Error)
+- Access(initialization) Before Declare (Error)
+- Variable Scope Drama [Added To Window Object] (no)
 - Block Or Scope Function
 
 - scope: local
@@ -92,11 +101,38 @@ Const
 - can be reassigned(new value same variable): no ,if it not (newtable)object or array
 - can be redeclared: no
 
+- javascript is loosely typed langues
+- Id element in html file, read as variable in js file
+- Variable Scope Drama ??
+
+String "" Syntax :
+console.log("hello my 'world'");
+console.log('hello my "world"');
+
+Character Escape Sequences \ :
+\ use to make the next character is a string
+console.log("hello \\my\\ world");
+
+New Line \n :
+console.log("hello \nmy\nworld");
+
+Concatenation:
+use to merge data 
+console.log("mo" + " " + "elfatih");
 
 
-
-!!javascript is loosely typed langues!!
-?? Variable Scope Drama ??
+Template Literals (Template String):
+use to merge data by ES6 feature
+Ex:/
+let title = "Header";
+let desc = "The description of the header";
+let LayOut = `
+<div>
+  <h1>${title}</h1>
+  <p>${desc}</p>
+</div>
+`;
+document.write(LayOut);
 
 */
 
