@@ -44,7 +44,7 @@ console.log(
 
 */
 
-/*  Data Types And Variable
+/*  Data Types, Concatenation, Template Literals And Variable 
 
 data type:
 - string
@@ -136,10 +136,11 @@ document.write(LayOut);
 
 */
 
-/*                                                   operators
-.                                                     العوامل
+/*  Operators (العوامل)
 
-arthematic operators: +  -  *  /  %  ++  --  **
+Arithmetic Operators: +  -  *  /  %  ++  --  **
+pre increment  ++num         pre decrement  --num
+post increment  num++        post decrement  num--
 EX:/
 var x = 3,
     y = 8,
@@ -164,7 +165,7 @@ console.log(-true);// -1
 console.log(+false);// 0
 console.log(-false);// -0
 
-unary operator: change string to a number
+Unary Operator: change string to a number
 unary plus(+)
 unary negation(-)
 Ex:/
@@ -197,64 +198,165 @@ console.log(x /= 2);//4     x = x / 2
 console.log(x **= 2);//16   x = x ** 2
 console.log(x %= 2);//0     x = x % 2
 
-comparison operators:
-==   compare the value
-!=   compare the value
-===  compare the value and data type
-!==  compare the value and data type
->
->=
-<=
 
-logical operators:
-!  not
-&& and
-|| or
+*/
+
+/*  Number, Math And String
+
+Syntactic Sugar: طرق مختلفه لكتابت الرقم ليكون سهل القراءة
+Ex:/
+console.log(1000000);
+console.log(1_000_000);
+console.log(1e6);
+console.log(10 ** 6);
+console.log(10 * 10 * 10 * 10 * 10 * 10);
+
+Min Max VAlue And Safe Value:
+Ex:/
+console.log(Number.MAX_SAFE_INTEGER); //9007199254740991
+console.log(Number.MAX_VALUE); // 1.7976931348623157e+308
+console.log(Number.MIN_SAFE_INTEGER); // -9007199254740991
+console.log(Number.MIN_VALUE); // 5e-324
+* Note *
+- double precision ??
 
 
-spread operator ... : use to spread elements in arrays or objects
--  use with string
+
+Number methods: [toString(), toFixed(), parseInt(), parseFloat(), isInteger(), isNaN(),]
+!!use double dots .. or () to call method!!
+- toString(): use to change number to string
+console.log((100).toString()); // 100
+console.log(typeof (100).toString()); // string
+console.log((100.676).toString()); //100.676
+console.log(typeof (100.676).toString()); // string
+- toFixed(): use to control decimal point numbers
+* Note *
+- more than or equal 5 = +1
+- less than 5 = -1
 Ex:/
-console.log("mohammed");
-console.log(..."mohammed");
-console.log([..."mohammed"]);
-- use with concatenate array and object
+console.log((100.555555).toFixed(2)); // 100.56
+console.log(typeof (100.555555).toFixed(2)); // string
+console.log((100.554555).toFixed(2)); // 100.54
+console.log(typeof (100.554555).toFixed(2)); // string
+- parseInt(): use to change string to integer number even if there a string
 Ex:/
-let arr1 = [1,2,3],
-arr2 = [4,5,6],
-newArray = [...arr1, ...arr2, 7, 8];
-console.log(newArray);
-let obj1 = {
-  a:1,
-  b:2,
-};
-let obj2 = {
-  c:3,
-  d:4,
-};
-let newObj = {...obj1, ...obj2, d:5};
-console.log(newObj);
-- use to copy array and object
+console.log(parseInt("100.45 mo")); // 100
+console.log(typeof parseInt("100.45 mo")); // number
+- parseFloat(): use to change string to integer or float number even if there a string
 Ex:/
-let arr = [1,3,4];
-let newArray = [...arr];
-console.log(newArray);
-let obj = {
-  a:1,
-  b:2,
-  c:3,
-};
-let newObject = {...obj};
-console.log(newObject);
-- use to push inside array
+console.log(parseFloat("100.45 mo")); // 100.45
+console.log(typeof parseFloat("100.45 mo")); // number
+- Number.isInteger(): use to ask if the input is integer number or not
+console.log(Number.isInteger("100")); // false
+console.log(Number.isInteger(100.55)); // false
+console.log(Number.isInteger(100)); // true
+- Number.isInteger(): use to ask if the input is NaN or not
+console.log(Number.isNaN("ali")); // false
+console.log(Number.isNaN("ali" - 20)); // true
+console.log(Number.isNaN(+"ali")); // true
+
+
+
+Math(): [pow(), sqrt(), round(),  ceil(), floor(), random(), trunc()]
+is methods use to process numbers
+- Math.round(): less than 0.5 equal 0.0 , more or equal 0.5 add 1
+console.log(Math.round(4.448)); // 4
+console.log(Math.round(4.552)); // 5
+- Math.ceil(): + 1 
+console.log(Math.ceil(4.448)); // 5
+console.log(Math.ceil(4.552)); // 5
+- Math.ceil(): - 1 
+console.log(Math.floor(4.448)); // 4
+console.log(Math.floor(4.552)); // 4 
+- Math.trunc(): take out the decimal
+console.log(Math.trunc(4.448)); // 4
+console.log(Math.trunc(4.552)); // 4
+- Math.min or max(): get less number or get large number
+console.log(Math.min(2, 5, 10, -10, -7)); // -10
+console.log(Math.max(2, 5, 10, -10, -7)); // 10
+- Math.pow( , ): to the power ...
+console.log(Math.pow(2, 4)); // 16
+- Math.random(): get random number
+console.log(Math.random()); // 0.5897391296844772
+console.log(Math.round(Math.random() * 100)); // 38
+
+
+
+String Methods
+string methods: [index[], chartAt(), length, toUpperCase(), toLowerCase(), split(), slice(), subString(),
+substr(), trim(), indexOf(), lastIndexOf(), includes(), startWith(), endWith()]
 Ex:/
-let arr = [1,2,3],
-newArray = [];
-newArray.push(...arr);
-console.log(newArray);
-- use with Math() method
-let arr = [1,2,3,4,3,2,1];
-console.log(Math.max(...arr));
+let theName = "  Ahmed  ";
+
+// indexing[]: use to access sequins data by indexing 
+console.log(theName[4]); // m
+console.log(theName[11]); // undefined
+
+//charAt(): use to access sequins data by character position 
+console.log(theName.charAt(4)); // m
+console.log(theName.charAt(11)); // empty " "
+
+// length: use to counting sequins
+console.log(theName.length); // 9
+
+// trim(): use to take out spacing in left and right
+console.log(theName.trim()); // Ahmed
+
+// toUpperCase(): use to change all string to capital
+console.log(theName.toUpperCase()); //   AHMED
+
+// toLowerCase() : use to change all string to small
+console.log(theName.toLowerCase()); //   ahmed
+
+// Chain Method: use to make sequins methods
+console.log(theName.trim().charAt(2).toUpperCase()); // M
+
+Ex:/
+let title = " elzero web school ";
+
+// indexOf(string, startingIndex): use to search string index
+console.log(title.indexOf("web")); // 8
+console.log(title.indexOf("weq")); // -1
+
+// lastIndexOf(string, startingIndex): use to search string index, but start searching from the last
+console.log(title.lastIndexOf("o")); // 16
+console.log(title.lastIndexOf("u")); // -1
+
+// repeat()
+console.log(title.repeat(2)); // elzero web school  elzero web school
+
+// split(): use to cutting string to pice's
+console.log(title.split()); // [' elzero web school ']
+console.log(title.split("")); // [' ', 'e', 'l', 'z', 'e', 'r', 'o', ' ', 'w', 'e', 'b', ' ', 's', 'c', 'h', 'o', 'o', 'l', ' ']
+console.log(title.split(" ")); // ['', 'elzero', 'web', 'school', '']
+
+// slice(): take a pace of a string
+console.log(title.slice(8, 11)); // web
+console.log(title.slice(-4, -2)); // oo
+
+// substring()
+console.log(title.substring(1, 7)); // elzero
+console.log(title.substring(7, 1)); // elzero
+console.log(title.substring(-100, 7)); //  elzero
+
+// substr()
+console.log(title.substr(1, 6)); // elzero
+console.log(title.substr(15, 2)); // oo
+
+// includes()
+console.log(title.includes("oo")); // true
+console.log(title.includes("oo", 16)); // false
+
+// startsWith(): search in the start of the length for string
+console.log(title.startsWith("oo")); // false
+console.log(title.startsWith("oo", 15)); // true
+
+// endsWith(): search in the last of the length for string
+console.log(title.endsWith("oo")); // false
+console.log(title.endsWith("oo", 17)); // true
+
+
+
 
 */
 
@@ -362,85 +464,65 @@ console.log(salary);
 
 /*                                                   [{( 2 )}]                                                                                                                                                                                                                                                                                                                                                                  */
 
-/*                                                   number and math
+/*
+comparison operators:
+==   compare the value
+!=   compare the value
+===  compare the value and data type
+!==  compare the value and data type
+>
+>=
+<=
 
-syntactic sugar: طرق مختلفه لكتابت الرقم
-Ex:/
-console.log(1000000);
-console.log(1_000_000);
-console.log(1e6);
-console.log(10 ** 6);
-console.log(10 * 10 * 10 * 10 * 10 * 10);
-console.log(1000000.00);
-
-
-max and min number in javascript:
-Ex:/
-console.log(Number.MAX_SAFE_INTEGER);
-console.log(Number.MAX_VALUE);
-console.log(Number.MIN_SAFE_INTEGER);
-console.log(Number.MIN_VALUE);
-?? double precision ??
-
-number methods: [toString(), toFixed(), parseInt(), parseFloat(), isInteger(), isNaN(),]
-!!use double dots .. or () to call method!!
-- toString(): use to change number to string
-Ex:/
-console.log(100..toString()); // 100
-console.log(typeof 100..toString()); // string
-console.log((100).toString()); // 100
-console.log(100..toString()); // 100
-- toFixed(): decries the float number depend to the num and it to string
-Ex:/
-console.log(100.546.toFixed(2)); // 100.55
-console.log(100.546.toFixed(3)); // 100.546
-console.log(typeof 2.toFixed(0)); // string
-- parseInt(): give the integer number ,if there string in the last of the number it will take it out
-Ex:/
-console.log(parseInt(100.55)); // 100
-console.log(parseInt("100.55 mohammed")); // 100
-- parseFloat(): give the float number ,if there string in the last of the number it will take it out
-Ex:/
-console.log(parseFloat(100.55)); // 100.55
-console.log(parseFloat("100.55 mohammed")); // 100.55
-- isInteger(): show if the number is integer
-console.log(Number.isInteger(100)); // true
-console.log(Number.isInteger("100")); // false
-- isNaN(): show if the number is not a number
-Ex:/
-console.log(Number.isNaN(100)); // false
-console.log(Number.isNaN("100")); // false
-console.log(Number.isNaN("mohammed")); // false
-console.log(Number.isNaN("mohammed" / 20)); // true
+logical operators:
+!  not
+&& and
+|| or
 
 
-math(): [pow(), sqrt(), round(),  ceil(), floor(), random(), trunc()]
-is methods use to process numbers
-- Math.pow(num.., num..): رقم اوس رقم
+spread operator ... : use to spread elements in arrays or objects
+-  use with string
 Ex:/
-console.log(Math.pow(3, 3)); // 27
-- Math.sqrt(num): الجزر التربيعي للرقم
+console.log("mohammed");
+console.log(..."mohammed");
+console.log([..."mohammed"]);
+- use with concatenate array and object
 Ex:/
-console.log(Math.sqrt(16)); // 4
-- Math.round(): اذا كان العدد 5. فما فوق تذهب لرقم الاكبر والعكس صحيح
+let arr1 = [1,2,3],
+arr2 = [4,5,6],
+newArray = [...arr1, ...arr2, 7, 8];
+console.log(newArray);
+let obj1 = {
+  a:1,
+  b:2,
+};
+let obj2 = {
+  c:3,
+  d:4,
+};
+let newObj = {...obj1, ...obj2, d:5};
+console.log(newObj);
+- use to copy array and object
 Ex:/
-console.log(Math.round(3.5)); // 4
-console.log(Math.round(3.49)); // 3
-- Math.ceil(num..): يقرب الرقم الي الاكبر مباشرة
+let arr = [1,3,4];
+let newArray = [...arr];
+console.log(newArray);
+let obj = {
+  a:1,
+  b:2,
+  c:3,
+};
+let newObject = {...obj};
+console.log(newObject);
+- use to push inside array
 Ex:/
-console.log(Math.ceil(2.01)); // 3
-console.log(Math.ceil(2.99)); // 3
-- Math.floor(num..): يقرب الرقم الي الاصغر مباشرة
-Ex:/
-console.log(Math.floor(2.01)); // 2
-console.log(Math.floor(2.99)); // 2
-- Math.random() * num.. : يختار رقم عشوائي بين رقمين وتكون بن الصفر 0 و رقم
-Ex:/
-console.log(Math.random() * 10); // 0.00000...1  --> 9.999999...9
-console.log(Math.ceil(Math.random() * 10)); // 1 2 3 4 5 6 --> 10
-- Math.trunc(): ياخذ الكسر العشري
-Ex:/
-console.log(Math.trunc(1.999)); // 1
+let arr = [1,2,3],
+newArray = [];
+newArray.push(...arr);
+console.log(newArray);
+- use with Math() method
+let arr = [1,2,3,4,3,2,1];
+console.log(Math.max(...arr));
 
 */
 

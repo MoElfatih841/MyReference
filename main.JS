@@ -1,21 +1,15 @@
-let titleContent = "Elzero",
-  DesContent = "Elzero Web School",
-  DateContent = 25 / 10;
-let layOut = `
-<div>
-  <h3>Hello ${titleContent}</h3>
-  <p>${DesContent}</p>
-  <span>${DateContent}</span>
-</div>
-`;
-document.write(layOut.repeat(4));
-console.log(elzero.innerHTML); // object
-console.log(typeof elzero); // object
-console.log(
-  '`I\'m In \n \\\\ \nLove \\\\ """ \'\'\' \n ++ With ++ \n\\"""\\""" \n""JavaScript""``'
-);
-let a = 21;
-let b = 20;
-let aAndb = `${b}${a}_`.repeat(3);
+let a = "Me Elzero Web School You";
 
-console.log(`_${a}_${aAndb}${b}`); // _21_2021_2021_2021_20_
+console.log(a.slice(2, 3).toUpperCase() + a.slice(3, 6)); // Zero
+
+console.log(a.substr(13, 1).toUpperCase().repeat(8)); // HHHHHHHH
+
+console.log(a.substring(0, 7).split()); // [Elzero]
+
+console.log(`${a.substr(0, 7)}${a.substr(-6)}`); // Elzero School
+
+console.log(
+  `${a[0].toLowerCase()}${a.slice(1, a.length - 1).toUpperCase()}${a
+    .slice(a.length - 1)
+    .toLowerCase()}`
+); // eLZERO WEB SCHOOl
