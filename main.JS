@@ -1,15 +1,19 @@
-let a = "Me Elzero Web School You";
+let job = "doctor";
+let salary = 0;
 
-console.log(a.slice(2, 3).toUpperCase() + a.slice(3, 6)); // Zero
-
-console.log(a.substr(13, 1).toUpperCase().repeat(8)); // HHHHHHHH
-
-console.log(a.substring(0, 7).split()); // [Elzero]
-
-console.log(`${a.substr(0, 7)}${a.substr(-6)}`); // Elzero School
-
-console.log(
-  `${a[0].toLowerCase()}${a.slice(1, a.length - 1).toUpperCase()}${a
-    .slice(a.length - 1)
-    .toLowerCase()}`
-); // eLZERO WEB SCHOOl
+switch (job) {
+  case "manger":
+    salary = 8000;
+    break;
+  case "it":
+  case "support":
+    salary = 6000;
+    break;
+  case "developer":
+  case "designer":
+    salary = 7000;
+    break;
+  default:
+    salary = 4000;
+}
+console.log(salary);

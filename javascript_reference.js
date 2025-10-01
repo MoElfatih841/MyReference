@@ -199,6 +199,26 @@ console.log(x **= 2);//16   x = x ** 2
 console.log(x %= 2);//0     x = x % 2
 
 
+
+False Output:
+||
+- null, undefined, falsy value(0, "", false)
+??
+- null, undefined only
+Ex:/
+let price = 0;
+console.log(price || 200); // 200
+console.log(price ?? 200); // 0
+price = false;
+console.log(price || 200); // 200
+console.log(price ?? 200); // false
+price = null;
+console.log(price || 200); // 200
+console.log(price ?? 200); // 200
+price = undefined;
+console.log(price || 200); // 200
+console.log(price ?? 200); // 200
+
 */
 
 /*  Number, Math And String
@@ -360,24 +380,79 @@ console.log(title.endsWith("oo", 17)); // true
 
 */
 
-/*                                                   conditions
+/*  Conditions And Switch
+
+comparison operators: المقارنه
+==   compare the value only
+!=   compare the value only
+===  compare the value and data type
+!==  compare the value and data type
+>
+>=
+<
+<=
+
+
+
+logical operators:
+!  not
+&& and
+|| or
+
+Ex:/
+console.log(!(10 < 20)); // false
+console.log(!true); // false
+console.log(!(10 === "10")); // true
+console.log(100 <= "100" && 20 > 1 && !false); // true
+console.log(100 <= "100" || 20 < 1 || !false); // true
+
+
 
 if condition:
-Ex:/
-let discount = false,
-discountAmount = 30,
-country = "KSA",
-price = 100;
-if (discount === true){
-  price -= discountAmount;
-} else if (country === "Sudan"){
-  discountAmount += 10;
-  price -= discountAmount;
+let price = 100;
+let discount = true;
+let discountAmount = 30;
+let country = "sudan";
+if (country === "ksa" || country === "sudan" || country === "egypt") {
+  country = true;
 } else {
-  discountAmount -= 20;
+  country = false;
+}
+console.log(country, discount);
+if (discount === true && country === true) {
+  price = price - discountAmount - 20;
+  console.log("hello");
+} else if (discount === true || country === true) {
   price -= discountAmount;
-};
+  console.log("hi");
+} else {
+  price -= 10;
+  console.log("olla");
+}
 console.log(price);
+
+
+
+Nesting Condition:
+Ex:/
+let price = 100;
+let discount = false;
+let discountAmount = 30;
+let country = "usa";
+let student = false;
+if (discount === true) {
+  price -= 10;
+  if (country === "ksa" || country === "sudan" || country === "egypt") {
+    price -= discountAmount;
+    if (student === true) {
+      price -= 20;
+    }
+  }
+}
+console.log(price);
+
+
+
 Ex:/
 var x = 4,
 y = "ten";
@@ -390,18 +465,19 @@ if (x % 2 === 0 && y % 2 === 0){
 }
 
 
+
 ternary condition: الشرط المختصر
 Ex:/
-let theName = "Mohammed",
-    theGender = "female",
-    theAge = 66;
-let gender = theGender === "male" ? "Mrs" : "Mr";
-console.log(`Hallo ${gender} ${theName}`);
-theAge < 18
-? console.log(`You Are Child`)
-: theAge >= 18 && theAge < 50
-? console.log(`You Are Young`)
-: console.log(`You Are Old`);
+let theName = "Mona";
+let theGender = "Female";
+let theAge = 45;
+
+console.log(`Hello ${theGender === "Male" ? "Mr" : "Mrs"} ${theName}`);
+let ageResult =
+  theAge < 18 ? "Child" : theAge >= 18 && theAge <= 45 ? "Young" : "Old";
+console.log(ageResult);
+
+
 
 default value:
 - logic or || : if the value equal null, undefined, false value
@@ -429,17 +505,29 @@ console.log(`price is ${price ?? "$$"}`);
 switch condition:
 !!must write break after any case to break the condition!!
 Ex:/
-var x = "ali";
-switch (x % 2){
-  case (0) :  // when x = 0
-    console.log("even");
+let day = "3";
+switch (day) {
+  case 0:
+    console.log("sunday");
     break;
-  case (1):   // when x = 1
-    console.log("odd");
+  case 1:
+    console.log("monday");
     break;
-  default:   // else
-    console.log("error");
-};
+  case 2:
+    console.log("thursday");
+    break;
+  case 3:
+    console.log("wednesday");
+    break;
+  case 4:
+    console.log("tuesday");
+    break;
+  case 5:
+    console.log("friday");
+    break;
+  default:
+    console.log("Unknown");
+}
 Ex:/
 let job = "manager";
 let salary = 0;
@@ -465,19 +553,9 @@ console.log(salary);
 /*                                                   [{( 2 )}]                                                                                                                                                                                                                                                                                                                                                                  */
 
 /*
-comparison operators:
-==   compare the value
-!=   compare the value
-===  compare the value and data type
-!==  compare the value and data type
->
->=
-<=
 
-logical operators:
-!  not
-&& and
-|| or
+
+
 
 
 spread operator ... : use to spread elements in arrays or objects
