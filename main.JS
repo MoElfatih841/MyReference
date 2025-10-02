@@ -1,19 +1,9 @@
-let job = "doctor";
-let salary = 0;
-
-switch (job) {
-  case "manger":
-    salary = 8000;
-    break;
-  case "it":
-  case "support":
-    salary = 6000;
-    break;
-  case "developer":
-  case "designer":
-    salary = 7000;
-    break;
-  default:
-    salary = 4000;
-}
-console.log(salary);
+let zero = 0;
+let counter = 3;
+let my = ["Ahmed", "Mazero", "Elham", "Osama", "Gamal", "Ameer"];
+my.splice(4);
+my = my.reverse();
+my = my.slice(++zero, counter);
+my = my[0].slice(--zero, --counter) + my[++zero].slice(counter);
+++counter;
+console.log(my.slice(++counter));

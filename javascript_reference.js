@@ -550,7 +550,219 @@ console.log(salary);
 
 */
 
-/*                                                   [{( 2 )}]                                                                                                                                                                                                                                                                                                                                                                  */
+/*  Array
+
+Access In Array Data:
+Ex:/
+let myFriends = ["Abdo", "Ahmed", "Ali", ["Osama", "Sayed", ["Mohammed", "Elfatih"]], "Marwan"];
+console.log(myFriends);
+console.log(myFriends[3][1]);
+
+Change Data In Array:
+Ex:/
+myFriends[3][1] = "Mustafa";
+console.log(myFriends);
+// myFriends[myFriends.length] = "Noor";
+console.log(myFriends);
+myFriends[myFriends.length - 1] = "Rashed";
+console.log(myFriends);
+
+
+
+Array.isArray() Method: use to show if it array or not
+Ex:/
+let myFriends = ["Abdo", "Ahmed", "Ali", ["Osama", "Sayed", ["Mohammed", "Elfatih"]], "Marwan"];
+console.log(Array.isArray(myFriends)); // true
+
+
+
+Length With Array:
+let myFriends = ["Abdo", "Ahmed", "Ali", ["Osama", "Sayed", ["Mohammed", "Elfatih"]], "Marwan"];
+console.log(myFriends.length); // 5
+myFriends[myFriends.length] = "memo";
+console.log(myFriends.length); // 6
+console.log(myFriends); 
+myFriends[myFriends.length - 1] = "nano"; 
+console.log(myFriends); 
+
+
+
+array:  [pop(), push(), shift(), unshift(), length, sort(), revers(), indexOf(), lastIndexOf(),
+include(), slice(), splice(), join(),  concat()]
+
+
+ADD Element In Array:
+- unshift(): يضف عنصر في اول المصفوفة و يعطيك عدد العناصر داخل المصفوفه بعد الاضافه
+Ex:/
+var array = ["mohammed", "elfatih", "ahmed"],
+    newArray = array.unshift("hamed");
+console.log(array); // ['hamed', 'mohammed', 'elfatih', 'ahmed']
+console.log(newArray); // 4
+- push("add element"): يضف عنصر في اخر المصفوفة و يعطيك عدد العناصر داخل المصفوفه بعد الاضافه
+Ex:/
+var array = ["mohammed", "elfatih", "ahmed"],
+    newArray = array.push("hamed");
+console.log(array); // ['mohammed', 'elfatih', 'ahmed', 'hamed']
+console.log(newArray); // 4
+
+Remove Element In Array:
+- shift(): اخذ اول عنصر داخل المصفوفه و تخزن كقيمه
+Ex:/
+var array = ["mohammed", "elfatih", "ahmed"],
+    newArray = array.shift();
+console.log(array); // ['elfatih', 'ahmed']
+console.log(newArray); // mohammed
+- pop(): تاخذ اخر عنصر داخل المصفوفه و تخزن كقيمه
+Ex:/
+var array = ["mohammed", "elfatih", "ahmed"],
+    newArray = array.pop();
+console.log(array); // ['mohammed', 'elfatih']
+console.log(newArray); // ahmed
+
+
+
+Search In Array:
+- indexOf(): search for the element from the beginning of the array
+- lastIndexOf(): search for the element from the last of the array
+- includes(): search for the element in the array and return true or false
+* Note *
+- if the element that is not found return -1 (indexOf, lastIndexOf, includes)
+Ex:/
+let numbers = [3, 101, 102, 10, 202, "201", "1000", 102, 300, 3];
+console.log(numbers.indexOf(3)); // 0
+console.log(numbers.indexOf(3, 3)); // 9 
+console.log(numbers.lastIndexOf(3)); // 9
+console.log(numbers.lastIndexOf(3, -3)); // 0
+console.log(numbers.includes(201, 2)); // false
+
+
+
+Sorting Array Elements:( ترتيب عناصر المصفوفة )
+- sort(): use to order elements alphabetic
+- revers(): use to revers elements order
+Ex:/
+let myArray = [4, mohammed, ali, 50, -3, -100, 200, -200, 11, 12, omar, 90, 900, 1000]
+console.log(myArray);
+console.log(myArray.reverse());
+console.log(myArray.sort());
+
+
+
+Array Cutting:
+- slice (): اختيار عناصر محدده داخل المصفوفه
+Slice(start opt, end opt)
+create a new array without changing in the main array
+- splice(): اضافة عناصر جديده و حزف عناصر و تغير قيمة المصفوفه الاصليه
+Splice(start !opt, how many element to remove !opt, adding elements)
+splice will change in the main array
+Ex:/
+var array = ['mohammed', 'elfatih', 'ahmed', 'ali', 'malik'];
+var newArray1 = array.slice(1,3);
+console.log(newArray1); // ['elfatih', 'ahmed']
+console.log(array); // ['mohammed', 'elfatih', 'ahmed', 'ali', 'malik']
+var newArray2 =array.splice(2, 2, "noor", "rashed");
+console.log(newArray2); //  ['ahmed', 'ali']
+console.log(array); //  ['mohammed', 'elfatih', 'noor', 'rashed', 'malik']
+
+
+
+Concatenate And Joining Array: 
+- concat():  يدمج مصفوفتان مع بعضهم البعض او اكثر
+- join("الفاصل بين عناصر المصفوفة"): تحول المصفوفة الي نص و تكتب كيفيت الفصل بين العناصر
+Ex:/
+let townFriend = ["omar", "ali", "noor"];
+let schoolFriend = ["mohamed", "anwar", "nona"];
+let companyFriend = ["ahmed", "elfatih"];
+let allFriends = townFriend.concat(
+  schoolFriend,
+  companyFriend,
+  0,
+  [1, 2, 3, 4]
+);
+console.log(allFriends);
+console.log(allFriends.join(" | "));
+
+
+Other Array Method:[from(), copyWithin(), some(), every()]
+
+- Array.from(): method to get arr from iterable
+Array.from(variable, Map function, this);
+!!this reference to the array!!
+Ex:/
+let item1 = "osman";
+let item2 = "12123455";
+let arr1 = Array.from(item1);
+console.log(arr1);
+let arr2 = Array.from(item2, el => +el + +el, this);
+console.log(arr2);
+Ex:/
+let myArray = [1,1,2,2,3,3,4,4];
+let mySet = new Set(myArray);
+mySet = Array.from(mySet);
+console.log(mySet);
+// console.log([...new Set(myArray)]) // advanced
+
+- copyWithin(): copy elements in array and past them in same array without change length of the arr
+!!copyWithin() make the change in same array!!
+copyWithin(target index, start index of the copy(option), end index of the copy(option))
+let myArray = [10, 20, 30, 40, 50, "A", "B"];
+myArray.copyWithin(3) // [10, 20, 30, 10, 20, 30, 40]
+// myArray.copyWithin(4,-1) // [10, 20, 30, 40, 'B', 'A', 'B']
+// console.log(arr.copyWithin(-6, -2)); // [10, 'A', 'B', 40, 50, 'A', 'B']
+// console.log(arr.copyWithin(-6, -2, -1)); // [10, 'A', 30, 40, 50, 'A', 'B']
+console.log(myArray);
+
+- some(): method use to check the elements of the array and return true or false
+!!if there only one element pass the condition then it true!!
+Ex:/
+let lopping = 0;
+let arr = [1,2,3,4,5,6,7,8,9,10,20,30];
+let num = 10;
+let checking = arr.some(function (el){
+  lopping += 1;
+  return el > this;
+}, num);
+console.log(lopping);
+console.log(checking);
+Ex:/
+let myArray = [1,2,3,4,5,6,7,8,9];
+let number = 4;
+function checkFun(arr, value) {
+  return arr.some(function(el){
+    return el === value;
+  });
+}; console.log(checkFun(myArray, number));
+Ex:/
+let myArray = [1,2,3,4,5,6,7,8,9];
+let range = {
+  min: 5,
+  max: 15,
+};
+ let numInRange = myArray.some(function (el){
+  console.log("done");
+  return el >= this.min && el <= this.max;
+}, range);
+ console.log(numInRange);
+
+- every():  method use to check the elements of the array and return true or false
+!!if there only one element does not pass the condition then it false!!
+Ex:/
+ let loc = {
+   20: "place1",
+   30: "place2",
+   10: "place3",
+   40: "place4",
+ };
+ let mainLocation = 15;
+ let keysArray = Object.keys(loc);
+ console.log(keysArray);
+ let newArray = keysArray.map(el => +el)
+ console.log(newArray);
+ let check = newArray.every(function(el){
+   return el >= this;
+ }, mainLocation);
+ console.log(check);
+*/
 
 /*
 
@@ -723,176 +935,6 @@ let theName = "mohammed elfatih";
 console.log(theName.endsWith("ed")); // false
 console.log(theName.endsWith("ed", 8)); // true
 
-*/
-
-/*                                                   array
-
-let myFriends = ["Abdo", "Ahmed", "Ali", ["Osama", "Sayed", ["Mohammed", "Elfatih"]], "Marwan"];
-Ex:/
-console.log(myFriends);
-console.log(myFriends[3][1]);
-myFriends[3][1] = "Mustafa";
-console.log(myFriends);
-myFriends[myFriends.length] = "Noor";
-console.log(myFriends);
-myFriends[myFriends.length - 1] = "Rashed";
-console.log(myFriends);
-
-
-- Array.isArray(): use to show if it array or not
-console.log(Array.isArray(myFriends));
-
-
-array:  [pop(), push(), shift(), unshift(), length, sort(), revers(), indexOf(), lastIndexOf(),
-include(), slice(), splice(), join(),  concat()]
-
-- pop(): تاخذ اخر عنصر داخل المصفوفه و تحويله الي نص
-Ex:/
-var array = ["mohammed", "elfatih", "ahmed"],
-    newArray = array.pop();
-console.log(array); // ['mohammed', 'elfatih']
-console.log(newArray); // ahmed
-
-- push("add element"): يضف عنصر في اخر المصفوفة و يعطيك عدد العناصر داخل المصفوفه بعد الاضافه
-Ex:/
-var array = ["mohammed", "elfatih", "ahmed"],
-    newArray = array.push("hamed");
-console.log(array); // ['mohammed', 'elfatih', 'ahmed', 'hamed']
-console.log(newArray); // 4
-
-- shift(): تاخذ اول عنصر داخل المصفوفه و تحويله الي نص
-Ex:/
-var array = ["mohammed", "elfatih", "ahmed"],
-    newArray = array.shift();
-console.log(array); // ['elfatih', 'ahmed']
-console.log(newArray); // mohammed
-
-- unshift(): يضف عنصر في اول المصفوفة و يعطيك عدد العناصر داخل المصفوفه بعد الاضافه
-Ex:/
-var array = ["mohammed", "elfatih", "ahmed"],
-    newArray = array.unshift("hamed");
-console.log(array); // ['hamed', 'mohammed', 'elfatih', 'ahmed']
-console.log(newArray); // 4
-
-- sort(): use to order elements alphabetic
-- revers():
-- includes(): search for the element in the array and return true or false
-- indexOf(): search for the element from the beginning of the array
-- lastIndexOf(): search for the element from the last of the array
-Ex:/
-let numbers = [1, 101, 102, 10, 202, "201", "1000", 102, 300, 3];
-console.log(numbers);
-console.log(numbers.reverse());
-console.log(numbers.sort());
-console.log(numbers.indexOf(102));
-console.log(numbers.lastIndexOf(102));
-console.log(numbers.includes("201", 2));
-
-- slice (): اختيار عناصر محدده داخل المصفوفه
-- splice(): اضافة عناصر جديده و حزف عناصر و تغير قيمة المصفوفه الاصليه
-Ex:/
-var array = ['mohammed', 'elfatih', 'ahmed', 'ali', 'malik'];
-var newArray1 = array.slice(1,3);
-console.log(newArray1); // ['elfatih', 'ahmed']
-console.log(array); // ['mohammed', 'elfatih', 'ahmed', 'ali', 'malik']
-var newArray2 =array.splice(2, 2, "noor", "rashed");
-console.log(newArray2); //  ['ahmed', 'ali']
-console.log(array); //  ['mohammed', 'elfatih', 'noor', 'rashed', 'malik']
-
-- concat():  يدمج مصفوفتان مع بعضهم البعض او اكثر
-Ex:/
-var array1 = ["mohammed", "elfatih", "ahmed"],
-array2 = ["ali", "malik"],
-newArray = array1.concat(array2, 1, 2, ["noor", "rashed"]);
-console.log(newArray); // ['mohammed', 'elfatih', 'ahmed', 'ali', 'malik', 1, 2, 'noor', 'rashed']
-
-- join("الفاصل بين عناصر المصفوفة"): تحول المصفوفة الي نص و تكتب كيفيت الفصل بين العناصر
-Ex:/
-var array = ["mohammed", "elfatih", "ahmed"],
-    newArray = array.join(" | ");
-console.log(array); // ['mohammed', 'elfatih', 'ahmed']
-console.log(newArray); // mohammed | elfatih | ahmed
-
-
-Other Array Method:[from(), copyWithin(), some(), every()]
-
-- Array.from(): method to get arr from iterable
-Array.from(variable, Map function, this);
-!!this reference to the array!!
-Ex:/
-let item1 = "osman";
-let item2 = "12123455";
-let arr1 = Array.from(item1);
-console.log(arr1);
-let arr2 = Array.from(item2, el => +el + +el, this);
-console.log(arr2);
-Ex:/
-let myArray = [1,1,2,2,3,3,4,4];
-let mySet = new Set(myArray);
-mySet = Array.from(mySet);
-console.log(mySet);
-// console.log([...new Set(myArray)]) // advanced
-
-- copyWithin(): copy elements in array and past them in same array without change length of the arr
-!!copyWithin() make the change in same array!!
-copyWithin(target index, start index of the copy(option), end index of the copy(option))
-let myArray = [10, 20, 30, 40, 50, "A", "B"];
-myArray.copyWithin(3) // [10, 20, 30, 10, 20, 30, 40]
-// myArray.copyWithin(4,-1) // [10, 20, 30, 40, 'B', 'A', 'B']
-// console.log(arr.copyWithin(-6, -2)); // [10, 'A', 'B', 40, 50, 'A', 'B']
-// console.log(arr.copyWithin(-6, -2, -1)); // [10, 'A', 30, 40, 50, 'A', 'B']
-console.log(myArray);
-
-- some(): method use to check the elements of the array and return true or false
-!!if there only one element pass the condition then it true!!
-Ex:/
-let lopping = 0;
-let arr = [1,2,3,4,5,6,7,8,9,10,20,30];
-let num = 10;
-let checking = arr.some(function (el){
-  lopping += 1;
-  return el > this;
-}, num);
-console.log(lopping);
-console.log(checking);
-Ex:/
-let myArray = [1,2,3,4,5,6,7,8,9];
-let number = 4;
-function checkFun(arr, value) {
-  return arr.some(function(el){
-    return el === value;
-  });
-}; console.log(checkFun(myArray, number));
-Ex:/
-let myArray = [1,2,3,4,5,6,7,8,9];
-let range = {
-  min: 5,
-  max: 15,
-};
- let numInRange = myArray.some(function (el){
-  console.log("done");
-  return el >= this.min && el <= this.max;
-}, range);
- console.log(numInRange);
-
-- every():  method use to check the elements of the array and return true or false
-!!if there only one element does not pass the condition then it false!!
-Ex:/
- let loc = {
-   20: "place1",
-   30: "place2",
-   10: "place3",
-   40: "place4",
- };
- let mainLocation = 15;
- let keysArray = Object.keys(loc);
- console.log(keysArray);
- let newArray = keysArray.map(el => +el)
- console.log(newArray);
- let check = newArray.every(function(el){
-   return el >= this;
- }, mainLocation);
- console.log(check);
 */
 
 /*                                                   [{( 3 )}]                                                                                                                                                                                                                                                                                                                                                                  */
