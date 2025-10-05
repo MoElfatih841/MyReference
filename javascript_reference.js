@@ -764,6 +764,113 @@ Ex:/
  console.log(check);
 */
 
+/*  Loop
+Ex:/
+let array = [1, 2, "Ali", "Omar", 3, "Ahmed", "Mohamed", 4];
+let newArray = [];
+for (let i = 0; i < array.length; i++) {
+  if (typeof array[i] === "string") {
+    newArray.push(array[i]);
+  }
+}
+console.log(newArray.sort());
+
+
+
+Nested Loop:
+Ex:/
+let products = ["Keyboard", "Phone", "Ipad", "Mouse"];
+let colors = ["Green", "Black", "white"];
+let models = [2022, 2025];
+
+for (let i = 0; i < products.length; i++) {
+  console.log(`# ${products[i]}:`);
+  console.log(" Colors:");
+  for (let c = 0; c < colors.length; c++) {
+    console.log(`- ${colors[c]}`);
+  }
+  console.log(" Models:");
+  for (let m = 0; m < models.length; m++) {
+    console.log(`-- ${models[m]}`);
+  }
+  console.log("*".repeat(15));
+}
+
+
+
+
+Loop Control: Break, Continue & Label
+
+- Break: use to stop the loop if the condition done
+Ex:/
+let products = ["Keyboard", "Phone", "Ipad", "Mouse"];
+for (let i = 0; i < products.length; i++) {
+  if (products[i] === "Ipad") {
+    break;
+  }
+  console.log(products[i]); // Keyboard, Phone
+}
+
+- Continue: use to continue the loop and forget the condition result
+Ex:/
+let products = ["Keyboard", 1, 2, "Phone", "Ipad", 3, "Mouse"];
+for (let i = 0; i < products.length; i++) {
+  if (typeof products[i] === "number") {
+    continue;
+  }
+  console.log(products[i]); // Keyboard, Phone, Ipad, Mouse
+}
+
+- Label: use to stop parent loop using child loop
+Ex:/
+let products = ["Keyboard", "Phone", "Ipad", "Mouse"];
+let colors = ["Green", "Black", "white"];
+parentLoop: for (let i = 0; i < products.length; i++) {
+  console.log(`# ${products[i]}:`);
+  console.log(" Colors:");
+  childLoop: for (let c = 0; c < colors.length; c++) {
+    if (colors[c] === "Black") {
+      break parentLoop;
+    }
+    console.log(`- ${colors[c]}`);
+  }
+  console.log("*".repeat(15));
+}
+
+
+
+Short Syntax:
+Ex:/
+let products = ["Keyboard", "Phone", "Ipad", "Mouse"];
+let i = 0;
+for (;;) {
+  if (i == products.length) break;
+  console.log(products[i]);
+  i++;
+}
+
+
+
+While & Do While Looping
+- While:
+Ex:/
+let products = ["Keyboard", "Phone", "Ipad", "Mouse"];
+let index = 0;
+while (index < products.length) {
+  console.log(`[${index + 1}] ${products[index]}`);
+  index += 1;
+}
+
+- Do While:
+Ex:/
+let products = ["Keyboard", "Phone", "Ipad", "Mouse"];
+do {
+  console.log(products[index]);
+  index++;
+} while (index < products.length);
+ 
+*/
+
 /*
 
 
@@ -816,7 +923,7 @@ console.log(Math.max(...arr));
 
 */
 
-/*                                                   string
+/*  string
 
 character escape sequences:
 back slash(\): use to egnor character and line
@@ -937,9 +1044,7 @@ console.log(theName.endsWith("ed", 8)); // true
 
 */
 
-/*                                                   [{( 3 )}]                                                                                                                                                                                                                                                                                                                                                                  */
-
-/*                                                   function
+/*  function
 
 the function have two input : parameters => the variables , and the value of parameters call arguments
 
@@ -1197,7 +1302,7 @@ function stackFun(){
 
 */
 
-/*                                                   object
+/*  object
 
 
 Ex:/
@@ -1323,7 +1428,7 @@ console.log(object3); //{prop1: 1, prop2: 2, prop3: 30, prop5: 50, prop4: 40, �
 
 */
 
-/*                                                   objects data type methods
+/*  objects data type methods
 ***********************************************************************
 syntax: ([
   [key, value],
@@ -1531,7 +1636,7 @@ console.log(obj);
 console.log(newObj);
 */
 
-/*                                                   this
+/*  this
 
 this: is a object return to parent object
 - this inside global scope: this return to window
@@ -1640,9 +1745,7 @@ console.log(youtube.returnContent());
 ?? this with strict mode ??
 */
 
-/*                                                   [{( 4 )}]                                                                                                                                                                                                                                                                                                                                                                  */
-
-/*                                                   dom
+/*  dom
 
 DOM: an object that control the HTML page
 
@@ -1887,7 +1990,7 @@ document.addEventListener("click", function (e){
 });
 */
 
-/*                                                   bom
+/*  bom
 
 Browser Popup: [alert(), confirm(), prompt()]
 - alert(): popup massage return undefined
@@ -2107,10 +2210,7 @@ console.log(navigator.languages);
 console.log(navigator.onLine);
 */
 
-/*                                                   [{( 5 )}]                                                                                                                                                                                                                                                                                                                                                                  */
-
-/*                                                   Destructuring
-.                                                    استخراج البيانات
+/*  Destructuring  استخراج البيانات
 
 it allow you to extract data from array , object and function and set them in new variables
 
@@ -2258,7 +2358,7 @@ let myFriends = [
 
 */
 
-/*                                                   Regular Expression
+/*  Regular Expression
 
 Regular Expression: pattern use to check data valid or not
 
@@ -2336,9 +2436,7 @@ console.log(url5.match(re));
 
 */
 
-/*                                                   [{( 6 )}]                                                                                                                                                                                                                                                                                                                                                                  */
-
-/*                                                   oop
+/*  oop
 
 Object Oriented Programming(OOP):
 - can create complex and large software architecture
@@ -2786,7 +2884,7 @@ console.log(generator.next());
 
 */
 
-/*                                                   Date
+/*  Date
 
 - Date Constructor: [Date.now()]
 new Date(): constructor for days and time  // Wed Jun 07 2023 13:24:36 GMT+0200 (Eastern European Standard Time)
@@ -2881,7 +2979,7 @@ console.log(time)
 
 */
 
-/*                                                   API
+/*  API
 
 Module: use to export and import codes between js files
 - add attribute type = "module" to export and import js src=/main.js files
@@ -3131,7 +3229,7 @@ fetchData();
 
 */
 
-/*                                                   api
+/*  api
 
 Error Handling: handil the error before stop the code run
 - throw : throw the epected error
@@ -3542,7 +3640,7 @@ window.onload = logInFunc();
 
 */
 
-/*                                                   methods
+/*  methods
 
 
 
@@ -3607,7 +3705,7 @@ let order2 = nums.sort(function(a, b){
 console.log(order2)
  */
 
-/*                                                   notes
+/*  notes
 
 !!when i make this move , what going to happen is == function!!
 document.getElementById("btn").onclick = function (){
@@ -4065,7 +4163,7 @@ commonloonBird.swim();
 
 */
 
-/*                                                   class works
+/*  class works
 
 1-  // simple card shopping:
 
