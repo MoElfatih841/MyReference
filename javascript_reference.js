@@ -1046,23 +1046,28 @@ console.log(theName.endsWith("ed", 8)); // true
 
 /*  function
 
+Function: use to (D'not Repeat Yourself)
 the function have two input : parameters => the variables , and the value of parameters call arguments
 
 
-anonymous function: function without name
+
+Anonymous Function: function without name
 Ex:/
 function (){
   console.log("anonymous function");
 }();
 
 
-definition function: function with a name
+
+Definition Function: function with a name
 Ex:/
 function log(){
   console.log("definition function");
 }log();
 
-return function: return the value to the trigger calling function
+
+
+Return Function: return the value to the trigger calling function
 Ex:/
 function add1(){
   let x = 0;
@@ -1078,7 +1083,9 @@ function add3(){
 }add3();
 console.log(add3()); // add3() = 6
 
-Interrupting: use to stop the function
+
+
+Interrupting: use return to stop the function
 Ex:/
 function generate(start, end){
   for (let i = start; i <= end; i++){
@@ -1090,7 +1097,18 @@ function generate(start, end){
 };
 generate(10, 20);
 
-Rest parameter: one parameter for unknown arguments
+
+
+Default Value Of Parameters: default value to the param if there was no value
+Ex:/
+function param(a = 5, b = "mohammed"){
+  console.log(a, b);
+}
+param(1);
+
+
+
+Rest Parameter: one parameter for unknown arguments
 !!... make the parameter array!!
 function calc(...numbers){
   let result = 0;
@@ -1145,12 +1163,6 @@ Ex:/
 ?? Execution Context ??
 ?? Lexical Environment ??
 
-default value of parameter: default value to the param if there was no value
-Ex:/
-function param(a = 5, b = "mohammed"){
-  console.log(a, b);
-}
-param(1);
 
 Ex:/
 let numAdder = 0;
