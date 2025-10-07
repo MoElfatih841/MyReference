@@ -1109,15 +1109,19 @@ param(1);
 
 
 Rest Parameter: one parameter for unknown arguments
-!!... make the parameter array!!
-function calc(...numbers){
+* Note *
+... make the parameter array
+rest parameter must be the last in params
+Ex:/
+function calc(...myNumbers) {
   let result = 0;
-  for (let i = 0; i < numbers.length; i++){
-    result += numbers[i];
-  };
-  return `Your Result Is ${result}`
-};
-console.log(calc(10, 20, 30, 40, 50));
+  for (let i = 0; i < myNumbers.length; i++) {
+    result += myNumbers[i];
+  }
+  return `The result is ${result}`;
+}
+console.log(calc(10, 20, 30, 40, 50, 50));
+
 
 regular or expression function: save the function in variable with or without function name
 !!expression function with function name is best practice , because it help in debugging!!

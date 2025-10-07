@@ -1,26 +1,11 @@
-function showDetails(a, b, c) {
-  let theName;
-  let theAge;
-  let available;
-  typeof a === "string"
-    ? (theName = a)
-    : typeof a === "number"
-    ? (theAge = a)
-    : (available = a);
-  typeof b === "string"
-    ? (theName = b)
-    : typeof b === "number"
-    ? (theAge = b)
-    : (available = b);
-  typeof c === "string"
-    ? (theName = c)
-    : typeof c === "number"
-    ? (theAge = c)
-    : (available = c);
-  available === true
-    ? console.log(`Hello ${theName}, Your Age Is ${theAge}, Available To Hire`)
-    : console.log(
-        `Hello ${theName}, Your Age Is ${theAge}, Not Available To Hire`
-      );
-}
-showDetails(false, 44, "Ahmed");
+// let names = function (...myNames) {
+//   return `String [${myNames.join("], [")}] => Done !`;
+// };
+
+let names = (...myNames) => `String [${myNames.join("], [")}] => Done !`;
+
+console.log(names("Osama", "Mohamed", "Ali", "Ibrahim", "Khalid"));
+
+let myNumbers = [20, 50, 10, 60];
+let calc = (one, two, ...nums) => one + two + nums[0][1];
+console.log(calc(10, myNumbers[0], myNumbers));
