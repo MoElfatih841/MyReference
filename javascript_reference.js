@@ -1123,8 +1123,10 @@ function calc(...myNumbers) {
 console.log(calc(10, 20, 30, 40, 50, 50));
 
 
-regular or expression function: save the function in variable with or without function name
-!!expression function with function name is best practice , because it help in debugging!!
+
+Variable Equal Function: save the function in variable with or without function name
+* Note*
+- expression function with function name is best practice , because it help in debugging
 Ex:/
 var func = function (){
   console.log("expression function");
@@ -1132,7 +1134,8 @@ var func = function (){
 func();
 
 
-nasted function:
+
+Nested Function:
 Ex:/
 let theMassage = function (firstName, lastName){
   let massage = `hello`;
@@ -1146,7 +1149,9 @@ let theMassage = function (firstName, lastName){
 };
 console.log(theMassage("mohammed", "ali"));
 
-arrow function:
+
+
+Arrow Function:
 Ex:/
 let theElement = element => console.log(element);
 theElement("moha");
@@ -1157,6 +1162,8 @@ let subAndMay = (num1 , num2) => {
   return (num).toString
 };
 subAndMay(10, -5);
+
+
 
 self invoke function(IIFE): put the function between practices
 Ex:/

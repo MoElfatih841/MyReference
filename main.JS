@@ -1,11 +1,11 @@
-// let names = function (...myNames) {
-//   return `String [${myNames.join("], [")}] => Done !`;
-// };
+let myString = "1,2,3,EE,l,z,e,r,o,_W,e,b,_,S,h,o,o,l,2,0,Z";
+let solution;
 
-let names = (...myNames) => `String [${myNames.join("], [")}] => Done !`;
+solution = myString
+  .split("")
+  .filter((ele) => isNaN(parseInt(ele)) && ele !== ",")
+  .map((ele) => (ele !== "_" ? ele : " "))
+  .slice(+true, -true)
+  .reduce((acc, ele) => acc + ele);
 
-console.log(names("Osama", "Mohamed", "Ali", "Ibrahim", "Khalid"));
-
-let myNumbers = [20, 50, 10, 60];
-let calc = (one, two, ...nums) => one + two + nums[0][1];
-console.log(calc(10, myNumbers[0], myNumbers));
+console.log(solution);
