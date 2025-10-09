@@ -1,11 +1,16 @@
-let myString = "1,2,3,EE,l,z,e,r,o,_W,e,b,_,S,h,o,o,l,2,0,Z";
-let solution;
-
-solution = myString
-  .split("")
-  .filter((ele) => isNaN(parseInt(ele)) && ele !== ",")
-  .map((ele) => (ele !== "_" ? ele : " "))
-  .slice(+true, -true)
-  .reduce((acc, ele) => acc + ele);
-
-console.log(solution);
+let obj1 = {
+  prop1: 1,
+  show: function () {
+    return `prop1:${this.prop1}`;
+  },
+};
+let obj10 = {
+  prop1: 10,
+  prop2: 20,
+  show: function () {
+    return `prop1:${this.prop1}  prop2:${this.prop2}`;
+  },
+};
+let assignObj = Object.assign({}, obj1, obj10, { prop3: 3, prop4: 4 });
+console.log(assignObj);
+console.log(assignObj.show());

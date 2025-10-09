@@ -1326,45 +1326,122 @@ function stackFun(){
 */
 
 /*  object
-
-
+object contain property(information) and method(functions)
 Ex:/
 let user = {
-  theName: "Mohammed",
-  theAge: 27,
-  sayHallo: function (){
-    return `Hello ${user.theName}`;
+  // Property
+  theName: "Mohamed",
+  theAge: 30,
+  // Method
+  info: function () {
+    return `Hello ${user.theName}, your age is ${user.theAge}`;
   },
 };
 console.log(user.theName);
 console.log(user.theAge);
-console.log(user.sayHallo());
+console.log(user.info());
 
 
-nasted object:
+
+Dot Notation & Bracket Notation
+dot notation access only to the direct property name
+bracket notation can access to variables and string property name
 Ex:/
+let outProperty = "the-country";
 let user = {
-  theName: "Mohammed",
-  theAge: 27,
-  theSkills: ["HTML", "CSS", "JS"],
-  theAddresses: {
-    ksa: "Riyadh",
-    sudan: {
-      one: "AlGazzera",
-      two: "Khartoum",
+  theName: "Mohamed",
+  "the-country": "Egypt",
+};
+console.log(user.theName); // Mohamed
+console.log(user["the-country"]); // Egypt
+console.log(user[outProperty]); // Egypt
+console.log(user.outProperty); // undefined
+
+
+
+
+Nested Object:
+Ex:/
+let available = "is-available";
+let user = {
+  theName: "Mohamed",
+  theAge: 30,
+  addresses: {
+    ksa: {
+      addressOne: "Riyadh",
+      addressTwo: "Judah",
     },
+    sudan: "Khartoum",
   },
-  available: false,
-  checkAv: function (){
-    if (user.available === true) {
-      return `free for work`
+  skills: ["HTML", "CSS", "Js"],
+  "is-available": false,
+  check: function () {
+    if (user[available] === true) {
+      return `free to work`;
     } else {
-      return `not free`;
-    } ;
+      return `not free to work`;
+    }
   },
 };
-console.log(user.checkAv());
+console.log(user.check()); // not free to work
 
+
+
+Create Object With New Keyword & This Keyword
+Ex:/
+let myObject = new Object({
+  theName: "mohamed",
+  theAge: 33,
+  show: function () {
+    return `${this.theAge * 365} Days`;
+  },
+});
+myObject.skills = ["HTMl", "CSS", "JS"];
+myObject.theAge = 30;
+console.log(myObject);
+console.log(myObject.show());
+
+
+
+Create Object With Create Method(Prototype النموزج)
+Ex:/
+let myObject = new Object({
+  theName: "mohamed",
+  theAge: 33,
+  show: function () {
+    return `${this.theAge * 365} Days`;
+  },
+});
+myObject.skills = ["HTMl", "CSS", "JS"];
+myObject.theAge = 30;
+console.log(myObject);
+console.log(myObject.show()); // 10950 Days
+let copyObj = Object.create(myObject);
+console.log(copyObj); // {}
+copyObj.theAge = 20;
+console.log(copyObj.show()); // 7300 Days
+
+
+
+
+Create Object With Assign Method
+method use to copy properties and methods form objects to a another object
+let obj1 = {
+  prop1: 1,
+  show: function () {
+    return `prop1:${this.prop1}`;
+  },
+};
+let obj10 = {
+  prop1: 10,
+  prop2: 20,
+  show: function () {
+    return `prop1:${this.prop1}  prop2:${this.prop2}`;
+  },
+};
+let assignObj = Object.assign({}, obj1, obj10, { prop3: 3, prop4: 4 });
+console.log(assignObj);
+console.log(assignObj.show());
 
 object: three ways to create object
 - object literals
@@ -1431,22 +1508,6 @@ let copyObject = Object.create(theObject);
 console.log(copyObject); {}
 copyObject.theAge = 40;
 console.log(copyObject.theAgeWithDays()); // 14600
-
-
-Object.assign(): method use to copy properties and methods to other object
-let object1 = {
-  prop1 : 1,
-  prop2 : 2,
-  prop3 : 3,
-};
-let object2 = {
-  prop5 : 50,
-  prop4 : 40,
-  prop3 : 30,
-};
-let object3 = Object.assign({}, object1, object2, {prop6: 60, prop7: 70});
-object3.prop8 = 80;
-console.log(object3); //{prop1: 1, prop2: 2, prop3: 30, prop5: 50, prop4: 40, …, prop8: 80}
 
 
 */
