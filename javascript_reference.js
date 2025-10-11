@@ -1443,6 +1443,9 @@ let assignObj = Object.assign({}, obj1, obj10, { prop3: 3, prop4: 4 });
 console.log(assignObj);
 console.log(assignObj.show());
 
+
+
+
 object: three ways to create object
 - object literals
 Ex:/
@@ -1510,6 +1513,270 @@ copyObject.theAge = 40;
 console.log(copyObject.theAgeWithDays()); // 14600
 
 
+*/
+
+/*  dom
+
+DOM(document object model): an object that control the HTML page
+
+Get Selector: [getElementById(), getElementByTagName(), getElementByClassName(),
+querySelector(), querySelectorAll()]
+- getElementById : Find Element By ID
+Ex:/
+let myIdElement = document.getElementById("my-div");
+- getElementsByTagName: Find Element By Tag Name
+Ex:/
+let myTagElements = document.getElementsByTagName("p");
+- getElementsByClassName: Find Element By Class Name
+EX:/
+let myClassElement = document.getElementsByClassName("my-span"); => Find Element By Class Name
+- querySelector: Find Element By CSS Selectors
+Ex:/
+let myQueryElement = document.querySelector("#my-div");
+- querySelectorAll: Find All Elements By Selector
+Ex:/
+let myQueryAllElement = document.querySelectorAll(".my-span");\
+*Note*
+- querySelector get the first selector of this name only
+- querySelectorAl get all of the selectors by this name
+
+
+
+Direct Elements : [head, title,  links, body, forms, URL, images]
+- title
+console.log(document.title);
+- head
+console.log(document.head);
+- body
+console.log(document.body);
+- forms
+console.log(document.forms[0].nameValue.value);
+- links
+console.log(document.links[1].href);
+- URL
+console.log(document.URL);
+- images
+console.log(document.images[0]);
+
+
+
+Get / Set Elements Content: [innerHTML, innerText, textContent]
+- innerHTML: get and set html elements with the texts
+myElement.innerHTML = "Text From <span>Main.js</span> File";
+console.log(myElement.innerHTML);
+- innerText: get and set text only from the code
+document.body.innerText = "<span>hallo</span>";
+- textContent:
+myElement.textContent = "Text From <span>Main.js</span> File";
+textContent get and set text only from the web page
+* Note *
+- innerText can't get display none element text , but textContent can
+
+
+
+Attributes:
+
+Direct Attribute Get & Set:
+Ex:/
+document.images[0].src = "https://google.com";
+document.images[0].title = "myImage";
+document.forms[1].name = "user-name";
+* Note *
+- if it there, it wil make overright, if it not there, it will add a new attribute
+
+Attribute Methods: [getAttribute(), setAttribute(), attributes(), hasAttributes, hasAttribute(), removeAttribute(),
+createAttribute(), setAttributeNode()]
+- get & set: methods use to get the attribute of the element and can change the value
+Ex:/
+let element = document.querySelector("input");
+console.log(element.getAttribute("value"));
+console.log(element.setAttribute("value", "Hello"));
+console.log(element.setAttribute("class"));
+- attributes: show all the attributes of the element
+- hasAttributes: check if the element have attributes
+- hasAttribute: check if the element have main attribute
+- removeAttribute: if the element have main attribute remove it
+- createAttribute: create attribute in html page
+- setAttributeNode: use to add attribute as a variable
+Ex:/
+let ch = document.querySelector(".father div");
+if (ch.hasAttributes() === true){
+  if(ch.getAttribute("class") === ""){
+    ch.removeAttribute("class");
+  } else {
+    ch.setAttribute("class", "done");
+  };
+} else {
+  console.log("no attribute");
+};
+Ex:/
+let father = document.querySelector(".father");
+let myAtt = document.createAttribute("id");
+father.setAttributeNode(myAtt);
+father.id = "fa"
+console.log(father);
+
+
+
+Create Elements: [createElement(), createComment(), createTextNode()]
+- createElement: create element in html page
+Ex:/
+let myElement = document.createElement("div");
+- createComment: create comment in html page
+Ex:/
+let myComment = document.createComment("This Is Div");
+- createTextNode: create text in html page
+Ex:/
+let myText = document.createTextNode("Product One");
+
+
+
+Deal With Children
+
+Get Children's Of The Element: [children, childNodes, firstChild, lastChild, firstElementChild, lastElementChild]
+- children: get only child's elements of parent element
+console.log(myElement.children);
+- childNodes: get all child's (element, comment, text, space, ...ect) of parent element
+console.log(myElement.childNodes);
+- firstChild: get first child of parent element (element, comment, text, space, ...ect)
+console.log(myElement.firstChild);
+- lastChild: get last child of parent element (element, comment, text, space, ...ect)
+console.log(myElement.lastChild);
+- firstElementChild: get first only element child of parent element
+console.log(myElement.firstElementChild);
+- lastElementChild: get last only element child of parent element
+console.log(myElement.lastElementChild);
+
+
+Dom events:
+mouse events: [click, dblclick, mousedown, mouseup, mouseover, mouseenter, mousemove, mouseleave, mouseout]
+- mousedown: count one time after start click
+- mouseup: count one time after end click
+- mouseenter: count one time when hover the element only
+- mouseover: count one time when hover the element or the element child's
+- mouseleave: count one time when leave or get out the element only
+- mouseout: count one time when leave or get out the element or the element child's
+- mousemove: counting when moving inside the element
+keyboard events: [keypress, keydown, keyup]
+- keypress: counting while the key pressing
+- keydown: counting while the key pressing
+- keyup: count one time after end the key pressing
+Form Events: auto focus or blur when load the page or click
+- click
+- focus
+- blur
+- cut
+- past
+- input: cut & past
+- submit
+selection
+- change
+load event: when the page finish loading
+window.onload = function (){
+  window.alert("loaded");
+}
+- preventDefault(): method use to stop the normal behavior for the event
+EX:/
+document.links[0].onclick = function (event){
+  event.preventDefault();
+};
+- Event Simulation: [click(), focus(), blur(), submit()]
+Ex:/
+let userName = document.querySelector('[name="username"]');
+let userAge = document.querySelector('[name="age"]');
+window.onload = function (){
+  userName.focus();
+};
+userName.onblur = function (){
+  userAge.focus();
+};
+userAge.onblur = function (){
+  document.forms[0].submit()
+};
+
+
+Class List Object: [classList, classList.length, classList.contains(), classList.item(),
+classList.add(), classList.remove(), classList.toggle()]
+- classList: show all the classes of the element
+console.log(element.classList);
+- classList.contains: show if the element have main class name
+console.log(element.classList.contains("osama"));
+- classList.item(index): show the class name number[..] in the element
+console.log(element.classList.item("3"));
+- classList.add: add class in the element
+element.onclick = function () {
+  element.classList.add("show");
+};
+- classList.remove: remove class in the element
+element.onclick = function () {
+  element.classList.remove("show");
+};
+- classList.toggle: (not found the class name)add or (found the class name)remove the class in the element
+element.onclick = function () {
+  element.classList.toggle("show");
+};
+
+
+CSS Styling: [style.theProperty, style.cssText, style.removeProperty(), style.setProperty(), styleSheets[].rules[].style]
+- style.theProperty:
+document.body.style.background = "red"; // line style
+- style.cssText:
+document.body.style.cssText = ` background-color: red; font-size: 33px; `; // line style
+- style.removeProperty():
+document.body.style.removeProperty("color"); // line style
+- style.setProperty():
+document.body.style.setProperty("background", "red", "important"); // line style
+- styleSheets[].rules[].style:
+styleSheets[the number of the css file]
+rules[the number of selector]
+document.styleSheets[0].cssRules[0].style.setProperty("background", "red", "important"); // css sheet style
+document.styleSheets[0].cssRules[0].style.removeProperty("border"); // css sheet style
+
+
+Ordering Elements: [before(), after(), append(), prepend(), remove()]
+- before: add [Element || String] before target element
+div.before(p);
+- after: add [Element || String] after target element
+div.after(p);
+- append: add [Element || String] at last inside target element
+div.append(p);
+- prepend: add [Element || String] at first inside target element
+div.prepend(p);
+- remove: remove element
+p.remove();
+
+
+Traversing(الانتقال): target the parent element or the brothers
+- nextSibling: target next something after element
+- previousSibling: target before something before element
+- nextElementSibling: target next element after element
+- previousElementSibling: target before element before element
+- parentElement: target the parent element
+
+
+Clone: [cloneNode()]
+- cloneNode(Deep): take copy of element if
+!!true will take copy the element with attributes , child's , text, comment ...ect  !!
+!!default(false) will take copy of the element only with attributes!!
+Ex:/
+let myP = document.querySelector("p").cloneNode(true);
+!!to change the clone element id use this method: myP.id = `${myP.id}-clone`;!!
+
+- addEventListener: method for make events it need parameters event and function
+!!can make more than one event for the same element!!
+!!can make event for element that did not made yet!!
+!!addEventListener() can take more than one event for same element!!
+let p = document.querySelector("p");
+p.onclick = function (){
+  let newP = p.cloneNode(true);
+  document.body.appendChild(newP);
+  newP.classList = "clone";
+};
+document.addEventListener("click", function (e){
+  if (e.target.className === "clone"){
+    console.log("i am clone");
+  };
+});
 */
 
 /*  objects data type methods
@@ -1827,251 +2094,6 @@ console.log(youtube.returnContent());
 
 
 ?? this with strict mode ??
-*/
-
-/*  dom
-
-DOM: an object that control the HTML page
-
-
-Get Selector: [getElementById(), getElementByTagName(), getElementByClassName(),
-querySelector(), querySelectorAll()]
-- getElementById : Find Element By ID
-Ex:/
-let myIdElement = document.getElementById("my-div");
-- getElementsByTagName: Find Element By Tag Name
-Ex:/
-let myTagElements = document.getElementsByTagName("p");
-- getElementsByClassName: Find Element By Class Name
-EX:/
-let myClassElement = document.getElementsByClassName("my-span"); => Find Element By Class Name
-- querySelector: Find Element By CSS Selectors
-Ex:/
-let myQueryElement = document.querySelector(".my-span");
-- querySelectorAll: Find All Elements By Selector
-Ex:/
-let myQueryAllElement = document.querySelectorAll(".my-span");
-!!querySelector get the first selector of this name only!!
-!!querySelectorAl get all of the selectors by this name!!
-
-
-Direct Elements : [title, head, body, forms, links, URL, images]
-- title
-console.log(document.title);
-- head
-console.log(document.head);
-- body
-console.log(document.body);
-- forms
-console.log(document.forms[0].one.value);
-- links
-console.log(document.links[1].href);
-- URL
-console.log(document.URL);
-- images
-console.log(document.images[0]);
-
-
-Get / Set Elements Content: [innerHTML, innerText, textContent]
-- innerHTML: get and set html elements with the texts
-myElement.innerHTML = "Text From <span>Main.js</span> File";
-console.log(myElement.innerHTML);
-- innerText: get and set text only
-document.body.innerText = "<span>hallo</span>";
-- textContent:
-myElement.textContent = "Text From <span>Main.js</span> File";
-!!textContent get and set text only !!
-!!innerText can't get display none element text , but textContent can!!
-
-
-Attribute: [getAttribute(), setAttribute(), attributes(), hasAttributes, hasAttribute(), removeAttribute(),
-createAttribute(), setAttributeNode()]
-- get & set: methods use to get the attribute of the element and can change the value
-Ex:/
-let element = document.querySelector("input");
-console.log(element.getAttribute("value"));
-console.log(element.setAttribute("value", "Hello"));
-console.log(element.setAttribute("class"));
-- attributes: show all the attributes of the element
-- hasAttributes: check if the element have attributes
-- hasAttribute: check if the element have main attribute
-- removeAttribute: if the element have main attribute remove it
-- createAttribute: create attribute in html page
-Ex:/
-let ch = document.querySelector(".father div");
-if (ch.hasAttributes() === true){
-  if(ch.getAttribute("class") === ""){
-    ch.removeAttribute("class");
-  } else {
-    ch.setAttribute("class", "done");
-  };
-} else {
-  console.log("no attribute");
-};
-Ex:/
-let father = document.querySelector(".father");
-let myAtt = document.createAttribute("id");
-father.setAttributeNode(myAtt);
-father.id = "fa"
-console.log(father);
-
-
-Create: [createElement(), createComment(), createTextNode()]
-- createElement: create element in html page
-Ex:/
-let myElement = document.createElement("div");
-- createComment: create comment in html page
-Ex:/
-let myComment = document.createComment("This Is Div");
-- createTextNode: create text in html page
-Ex:/
-let myText = document.createTextNode("Product One");
-
-
-Get Children's Of The Element: [children, childNodes, firstChild, lastChild, firstElementChild, lastElementChild]
-- children: get only child's elements of parent element
-console.log(myElement.children);
-- childNodes: get all child's (element, comment, text, space, ...ect) of parent element
-console.log(myElement.childNodes);
-- firstChild: get first child of parent element (element, comment, text, space, ...ect)
-console.log(myElement.firstChild);
-- lastChild: get last child of parent element (element, comment, text, space, ...ect)
-console.log(myElement.lastChild);
-- firstElementChild: get first only element child of parent element
-console.log(myElement.firstElementChild);
-- lastElementChild: get last only element child of parent element
-console.log(myElement.lastElementChild);
-
-
-Dom events:
-mouse events: [click, dblclick, mousedown, mouseup, mouseover, mouseenter, mousemove, mouseleave, mouseout]
-- mousedown: count one time after start click
-- mouseup: count one time after end click
-- mouseenter: count one time when hover the element only
-- mouseover: count one time when hover the element or the element child's
-- mouseleave: count one time when leave or get out the element only
-- mouseout: count one time when leave or get out the element or the element child's
-- mousemove: counting when moving inside the element
-keyboard events: [keypress, keydown, keyup]
-- keypress: counting while the key pressing
-- keydown: counting while the key pressing
-- keyup: count one time after end the key pressing
-Form Events: auto focus or blur when load the page or click
-- click
-- focus
-- blur
-- cut
-- past
-- input: cut & past
-- submit
-selection
-- change
-load event: when the page finish loading
-window.onload = function (){
-  window.alert("loaded");
-}
-- preventDefault(): method use to stop the normal behavior for the event
-EX:/
-document.links[0].onclick = function (event){
-  event.preventDefault();
-};
-- Event Simulation: [click(), focus(), blur(), submit()]
-Ex:/
-let userName = document.querySelector('[name="username"]');
-let userAge = document.querySelector('[name="age"]');
-window.onload = function (){
-  userName.focus();
-};
-userName.onblur = function (){
-  userAge.focus();
-};
-userAge.onblur = function (){
-  document.forms[0].submit()
-};
-
-
-Class List Object: [classList, classList.length, classList.contains(), classList.item(),
-classList.add(), classList.remove(), classList.toggle()]
-- classList: show all the classes of the element
-console.log(element.classList);
-- classList.contains: show if the element have main class name
-console.log(element.classList.contains("osama"));
-- classList.item(index): show the class name number[..] in the element
-console.log(element.classList.item("3"));
-- classList.add: add class in the element
-element.onclick = function () {
-  element.classList.add("show");
-};
-- classList.remove: remove class in the element
-element.onclick = function () {
-  element.classList.remove("show");
-};
-- classList.toggle: (not found the class name)add or (found the class name)remove the class in the element
-element.onclick = function () {
-  element.classList.toggle("show");
-};
-
-
-CSS Styling: [style.theProperty, style.cssText, style.removeProperty(), style.setProperty(), styleSheets[].rules[].style]
-- style.theProperty:
-document.body.style.background = "red"; // line style
-- style.cssText:
-document.body.style.cssText = ` background-color: red; font-size: 33px; `; // line style
-- style.removeProperty():
-document.body.style.removeProperty("color"); // line style
-- style.setProperty():
-document.body.style.setProperty("background", "red", "important"); // line style
-- styleSheets[].rules[].style:
-styleSheets[the number of the css file]
-rules[the number of selector]
-document.styleSheets[0].cssRules[0].style.setProperty("background", "red", "important"); // css sheet style
-document.styleSheets[0].cssRules[0].style.removeProperty("border"); // css sheet style
-
-
-Ordering Elements: [before(), after(), append(), prepend(), remove()]
-- before: add [Element || String] before target element
-div.before(p);
-- after: add [Element || String] after target element
-div.after(p);
-- append: add [Element || String] at last inside target element
-div.append(p);
-- prepend: add [Element || String] at first inside target element
-div.prepend(p);
-- remove: remove element
-p.remove();
-
-
-Traversing(الانتقال): target the parent element or the brothers
-- nextSibling: target next something after element
-- previousSibling: target before something before element
-- nextElementSibling: target next element after element
-- previousElementSibling: target before element before element
-- parentElement: target the parent element
-
-
-Clone: [cloneNode()]
-- cloneNode(Deep): take copy of element if
-!!true will take copy the element with attributes , child's , text, comment ...ect  !!
-!!default(false) will take copy of the element only with attributes!!
-Ex:/
-let myP = document.querySelector("p").cloneNode(true);
-!!to change the clone element id use this method: myP.id = `${myP.id}-clone`;!!
-
-- addEventListener: method for make events it need parameters event and function
-!!can make more than one event for the same element!!
-!!can make event for element that did not made yet!!
-!!addEventListener() can take more than one event for same element!!
-let p = document.querySelector("p");
-p.onclick = function (){
-  let newP = p.cloneNode(true);
-  document.body.appendChild(newP);
-  newP.classList = "clone";
-};
-document.addEventListener("click", function (e){
-  if (e.target.className === "clone"){
-    console.log("i am clone");
-  };
-});
 */
 
 /*  bom
