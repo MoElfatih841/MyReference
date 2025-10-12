@@ -1,29 +1,22 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  margin: auto;
+  background-color: #eee;
+  & input {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    border-style: none;
+    text-align: center;
+  }
+}

@@ -1648,7 +1648,7 @@ console.log(myElement.firstElementChild);
 console.log(myElement.lastElementChild);
 
 
-Dom events:
+DOM Events
 mouse events: [click, dblclick, mousedown, mouseup, mouseover, mouseenter, mousemove, mouseleave, mouseout]
 - mousedown: count one time after start click
 - mouseup: count one time after end click
@@ -1675,7 +1675,8 @@ load event: when the page finish loading
 window.onload = function (){
   window.alert("loaded");
 }
-- preventDefault(): method use to stop the normal behavior for the event
+
+PreventDefault(): method use to stop the normal behavior for the event
 EX:/
 document.links[0].onclick = function (event){
   event.preventDefault();
@@ -1694,6 +1695,16 @@ userAge.onblur = function (){
   document.forms[0].submit()
 };
 
+Event Simulation
+Ex:/
+window.onload = function (){
+  inputOne.focus();
+}
+inputTwo.onblur = function (){
+  document.links[0].click();
+}
+
+
 
 Class List Object: [classList, classList.length, classList.contains(), classList.item(),
 classList.add(), classList.remove(), classList.toggle()]
@@ -1701,7 +1712,7 @@ classList.add(), classList.remove(), classList.toggle()]
 console.log(element.classList);
 - classList.contains: show if the element have main class name
 console.log(element.classList.contains("osama"));
-- classList.item(index): show the class name number[..] in the element
+- classList.item("index"): show the class name in the index
 console.log(element.classList.item("3"));
 - classList.add: add class in the element
 element.onclick = function () {
@@ -1715,6 +1726,7 @@ element.onclick = function () {
 element.onclick = function () {
   element.classList.toggle("show");
 };
+
 
 
 CSS Styling: [style.theProperty, style.cssText, style.removeProperty(), style.setProperty(), styleSheets[].rules[].style]
@@ -1733,6 +1745,7 @@ document.styleSheets[0].cssRules[0].style.setProperty("background", "red", "impo
 document.styleSheets[0].cssRules[0].style.removeProperty("border"); // css sheet style
 
 
+
 Ordering Elements: [before(), after(), append(), prepend(), remove()]
 - before: add [Element || String] before target element
 div.before(p);
@@ -1746,12 +1759,14 @@ div.prepend(p);
 p.remove();
 
 
+
 Traversing(الانتقال): target the parent element or the brothers
 - nextSibling: target next something after element
 - previousSibling: target before something before element
 - nextElementSibling: target next element after element
 - previousElementSibling: target before element before element
 - parentElement: target the parent element
+
 
 
 Clone: [cloneNode()]
@@ -1761,6 +1776,8 @@ Clone: [cloneNode()]
 Ex:/
 let myP = document.querySelector("p").cloneNode(true);
 !!to change the clone element id use this method: myP.id = `${myP.id}-clone`;!!
+
+
 
 - addEventListener: method for make events it need parameters event and function
 !!can make more than one event for the same element!!

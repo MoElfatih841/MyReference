@@ -1,20 +1,10 @@
-let myBtn = document.getElementById("btn");
-
-myBtn.onclick = function () {
-  let userNameValidation = false;
-  let userAgeValidation = false;
-  let userName = document.querySelectorAll("input")[0];
-  let userAge = document.querySelectorAll("input")[1];
-  if (userName.value !== "" && userName.value.length <= 10) {
-    userNameValidation = true;
-    console.log("userNameValidation Done");
-  }
-  if (userAge.value !== "" && userAge.value.length <= 2) {
-    userAgeValidation = true;
-    console.log("userAgeValidation Done");
-  }
-  if (userNameValidation === false || userAgeValidation === false) {
-    event.preventDefault();
-    console.log("stop");
+let numCode = function (...num) {
+  if (num.length === 4) {
+    for (let i = 0; i < num.length; i++) {
+      document.getElementsByTagName("form")[0][i].setAttribute("value", num[i]);
+    }
+  } else {
+    console.error(`code is not right`);
   }
 };
+numCode(3, 5, 6, 4);
