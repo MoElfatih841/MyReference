@@ -1760,7 +1760,7 @@ p.remove();
 
 
 
-Traversing(الانتقال): target the parent element or the brothers
+Traversing Between Elements(الانتقال بين الانتقال): target the parent element or the brothers
 - nextSibling: target next something after element
 - previousSibling: target before something before element
 - nextElementSibling: target next element after element
@@ -1769,13 +1769,15 @@ Traversing(الانتقال): target the parent element or the brothers
 
 
 
-Clone: [cloneNode()]
-- cloneNode(Deep): take copy of element if
-!!true will take copy the element with attributes , child's , text, comment ...ect  !!
-!!default(false) will take copy of the element only with attributes!!
+Clone
+- cloneNode(Deep): use to take clone from other element
+* Note *
+- if deep = false(default), take clone of the element with attributes without take child's elements
+- if deep = true, take clone of the element with attributes and with child's elements
+- js overright the clone in the element variable
+- to change the clone element id use this method: myP.id = `${myP.id}-clone`;!!
 Ex:/
 let myP = document.querySelector("p").cloneNode(true);
-!!to change the clone element id use this method: myP.id = `${myP.id}-clone`;!!
 
 
 
@@ -2151,6 +2153,20 @@ btn.onclick = function (){
   clearTimeout(holder2);
   clearTimeout(holder3);
 };
+
+- clearTimeout(): use to stop setTimeout function before start
+Ex:/
+<button id="btn">stop</button>
+let massage = function (user) {
+  console.log(`your name is ${user}`);
+};
+let counter = setTimeout(massage, 2000, "mohamed");
+console.log(counter);
+let btn = document.getElementById("btn");
+btn.onclick = function () {
+  clearTimeout(counter);
+};
+
 - setInterval(): make looping on the function
 setInterval(Function, seconds, Additional Params)
 Ex:/
