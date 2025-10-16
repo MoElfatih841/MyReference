@@ -2202,7 +2202,8 @@ location.hash("#secondPage");
 *****************************
 
 
-Page methods: [open(), close(), stop(), print(), focus()];
+
+window methods: [open(), close(), stop(), print(), focus()];
 - open():open new link in new window
 window.open([url]"https://google.com",[open in _self or _blank] "_blank",[property width, height,top...] "width=300,height=300,top=50,left=50");
 - close():close only the window that opened with open() method
@@ -2210,6 +2211,7 @@ window.close();
 - stop(): stop the loading of the page
 - print(): print the page
 - focus(): auto focus in the page
+
 
 
 History :is a object that have methods that control browser history
@@ -2224,8 +2226,8 @@ history.go(-3);`
 
 
 Scroll: [scrollTo(x, y, behavior), scrollBy(x, y, behavior), scrollX, scrollY]
-!!scrollTo: move to the values of x and y axises one time!!
-!!scrollBy: move to the values of x and y axises every time!!
+- scrollTo: move to the values of x and y axises one time when calling the function if it in the same axises iy will not move again
+- scrollBy: move to the values of x and y axises every time 
 - scrollX : use to read scrolling value of x axis
 - scrollY: use to read scrolling value of y axis
 - scrollTop: use like scrollY
@@ -2257,20 +2259,40 @@ window.scrollTo({
 - scrollHeight: read all page height
 - scrollClient: read the visible page height only
 
+
+
 Local & Session Storage Methods: [setItem(), getItem(), .key(), removeItem(), clear()]
-- local storage:
-!!private tab = new storage!!
-!!same page different protocol(http & https) = different storage!!
-- session storage:
-!!new tab(page) = new storage!!
-!!new tab(page) same url = new storage!!
-!!duplicate tab = same storage!!
-Ex:/
+
+Local Storage:
+- private tab = new storage!!
+- same page different protocol(http & https) = different storage why to save data!!
+
 - setItem(): set new key to the localStorage object
+Ex:/
+localStorage.setItem("color1", "red");
+localStorage.colo2 = "blue";
+localStorage["color3"] = "green";
+
 - getItem(): get key value from the localStorage object
 - key(): get key name using indexing from the localStorage object
+Ex:/
+console.log(localStorage.key(2));
+localStorage.getItem("color2");
+console.log(localStorage.color3);
+console.log(localStorage["color3"]);
 - removeItem(): remove key from the localStorage object
+Ex:/
+localStorage.removeItem("color");
+
 - clear(): clear all keys from the localStorage object
+Ex:/
+localStorage.clear();
+
+Session Storage:
+- new tab(page) = new storage
+- new tab(page) same url = new storage
+- duplicate tab = same storage
+
 Ex:/
 let black =  localStorage.setItem("color1", "#aaa"); // not working !!!!!
 let red = localStorage.color2 = "red";
