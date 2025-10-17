@@ -3,20 +3,30 @@
   margin: 0;
   padding: 0;
 }
-form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-  height: 50px;
-  margin: auto;
-  background-color: #eee;
-  & input {
+
+.container {
+  background-color: #fff;
+  /* height: 30px; */
+  & span {
+    display: inline-block;
     width: 20px;
     height: 20px;
-    margin: 0 5px;
-    border-style: none;
+    margin: 10px;
     text-align: center;
+    border: 1px solid;
+    opacity: 0.35;
+  }
+  & span:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  & :nth-child(1) {
+    background-color: red;
+  }
+  & :nth-child(2) {
+    background-color: blue;
+  }
+  & :nth-child(3) {
+    background-color: green;
   }
 }
