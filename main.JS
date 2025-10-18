@@ -1,13 +1,22 @@
-if (localStorage.getItem("backgroundColor") !== null) {
-  document.body.style.backgroundColor = localStorage.getItem("backgroundColor");
+let chosen = 1;
+let myFriends = [
+  { title: "osama", age: "39", available: true, skills: ["HTML", "CSS"] },
+  { title: "ahmed", age: "25", available: false, skills: ["python", "django"] },
+  { title: "sayed", age: "33", available: true, skills: ["php", "laravel"] },
+];
+
+if (chosen > 0 && chosen <= myFriends.length) {
+  chosen -= 1;
+  let {
+    title: t,
+    age: a,
+    available: av,
+    skills: [, skOne],
+  } = myFriends[chosen];
+  console.log(t);
+  console.log(a);
+  av === true ? console.log("available") : console.log("not available");
+  console.log(skOne);
 } else {
-  document.body.style.backgroundColor = document
-    .querySelectorAll(".container span")[0]
-    .getAttribute("color-data");
+  console.error("not valid");
 }
-addEventListener("click", function (e) {
-  if (e.target.hasAttribute("color-data")) {
-    this.localStorage.backgroundColor = e.target.getAttribute("color-data");
-    this.document.body.style.backgroundColor = localStorage.backgroundColor;
-  }
-});
