@@ -2221,6 +2221,215 @@ if (chosen > 0 && chosen <= myFriends.length) {
 
 */
 
+/*  Objects Data Type Methods
+
+syntax: ([
+  [key, value],
+  [key, value],
+  [key, value],
+]);
+or
+([
+  [{key: "value"}, {key: "value"}, {key: "value"}],
+  [{key: "value"}, {key: "value"}, {key: "value"},]
+]);
+
+
+Set Data Type
+new Set(): can contain array or object inside array [{}]
+ store only unique values
+ cannot access elements by index[] 
+  set data use like filter method 
+- add():
+let arr = [1,2,33,33,3];
+let unique = new Set(arr);
+unique.add("a").add("b").add("b").add("a").add("b").add("a").add("c").add("c").add("d").add("c");
+
+- size: property use to count unique value.
+console.log(unique.size);
+
+- delete():
+console.log(unique.delete("c"));
+
+- clear():
+unique.clear();
+
+- has():
+console.log(uniqueData.has("a"));
+
+can store any data type inside of the array, (storage array, string)
+EX:/
+let arr = [1,1,2,3,4,5,5];
+let str = "1123455";
+let newArr = new Set(arr);
+console.log(newArr);
+let newStr = new Set(str);
+console.log(newStr);
+- !!have keys, value and entries!!
+EX:/
+let arr = [1,1,2,3,"A","A","B"];
+let newArr = new Set(arr);
+console.log(newArr);
+let iterator = newArr.values() // .keys()
+console.log(iterator);
+console.log(iterator.next()); // {value: 1, done: false}
+console.log(iterator.next().value); // 2
+console.log(iterator.next().value); // 3
+console.log(iterator.next().value); // A
+console.log(iterator.next().value); // B
+console.log(iterator.next().done); // true
+- !!can use forEach!!
+EX:/
+let mySet = new Set()
+mySet.add(1).add(2).add(2).add(2).add(3)
+console.log(mySet);
+mySet.forEach(el => {
+  console.log(el + el);
+});
+Ex:/
+let items = [1,1,2,2,3,3,4,4];
+let uniqueItems1 = new Set(items);
+let uniqueItems2 = new Set(["A","A","B","C","D","D","E","F"]);
+console.log(uniqueItems1);
+console.log(uniqueItems1.size);
+console.log(uniqueItems1.add(5).add(6).add(7));
+console.log(uniqueItems1.size);
+console.log(uniqueItems1.delete(1));
+uniqueItems1.delete(2);
+console.log(uniqueItems1.size);
+console.log(`does have 1 : ${uniqueItems1.has(1)}`);
+console.log(`does have 4 : ${uniqueItems1.has(4)}`);
+console.log(uniqueItems1.size);
+uniqueItems1.clear();
+console.log(uniqueItems1.size);
+console.log(uniqueItems1);
+console.log("*".repeat(25))
+console.log(uniqueItems2);
+console.log(uniqueItems2.size);
+console.log(uniqueItems1.add("G").add("H").add("I"));
+console.log(uniqueItems2.size);
+uniqueItems2.delete("A");
+console.log(uniqueItems2.delete("a"));
+console.log(uniqueItems2.size);
+console.log(`does have "C" : ${uniqueItems2.has("C")}`);
+console.log(`does have "A" : ${uniqueItems2.has("A")}`);
+console.log(uniqueItems2.size);
+uniqueItems2.clear();
+console.log(uniqueItems2.size);
+console.log(uniqueItems2);
+
+
+
+WeakSet(garbage collector): store objects that become anuses(garbage collection) to remove them from memory
+ can store only object data type inside of the array
+ does not have size property
+  does not have clear() , keys(), ... ect methods
+  can't use foreach() method
+Ex:/
+let elem2 = [{a:1,b:2}, {a:3,b:4}, {a:5,b:6}];
+let uniqueElem2 = new WeakSet(elem2);
+console.log(uniqueElem2);
+
+
+Map data type: object use like object with some different's
+Map():[size, delete(), clear(), has()]
+- !!map does not contain default key but, object have!!
+- !!map put the data in order but, object not 100%!!
+- !!map can get items by size() but, object only manually!!
+- !!map can loop in keys directly but, object can't only manually!!
+- !!map better performance than object in add and remove data!!
+- !!map keys can be [object, function or any data type] but, object can be symbol!!
+- size: property use to count unique value.
+- delete():
+- clear():
+- has():
+Ex:/
+let obj = {}, // have prototype
+emptyObj = Object.create(null), // have no prototype
+mapObj = new Map(); // have no prototype
+console.log(obj);
+console.log(emptyObj);
+console.log(mapObj);
+Ex:/
+let obj = {
+  1: "number",
+  "1": "string",
+};
+let newMapObj = new Map();
+newMapObj.set(1,"number");
+newMapObj.set("1","string");
+console.log(newMapObj.get(1));
+console.log(obj[1]);
+newMapObj.set(true,"boolean");
+newMapObj.set({c:1, d:2,},"object");
+newMapObj.set(n => n = 1  + 1,"function");
+console.log(newMapObj);
+Ex:/
+let myMap = new Map([
+  ["name", "string"],
+  ["phone", "number"],
+  [false, "boolean"],
+]);
+myMap.set("address","Arkweet");
+myMap.set("email", "melfatih841@gmail.com");
+myMap.set("hallo",function hallo(){console.log("hallo");});
+console.log(myMap);
+console.log(myMap.size);
+console.log(myMap.has("hallo"));
+console.log(myMap.size);
+console.log(myMap.delete("hallo"));
+console.log(myMap.size);
+myMap.clear();
+console.log(myMap);
+console.log(myMap.size);
+Ex:/
+let obj = {
+  1: "one",
+  2: "two",
+};                              // Error: can not contain object in Map data type
+let newObj = new Map(obj);
+console.log(newObj);
+
+
+WeakMap: store object only and remove them once they become anuses to (garbage collection)
+Ex:/
+// Map
+let myObj = {
+  theName: "Mohammed",
+  theNumber: 0922591418,
+  theAddress: "Arkweet",
+};
+let myMap = new Map();
+myMap.set(myObj, "object value");
+console.log(myObj);
+console.log(myMap);
+myObj = null;
+console.log("##".repeat(18));
+let myObj2 = {
+  theName: "Mohammed",
+  theNumber: 0922591418,
+  theAddress: "Arkweet",
+};
+//  WeakMap
+let myWeakMap = new WeakMap();
+myWeakMap.set(myObj2, "object value");
+console.log(myObj2);
+console.log(myWeakMap);
+myObj2 = null;
+Ex:/
+let obj = {
+  1: "one",
+  2: "two",
+}
+console.log(obj);
+let newObj = new WeakMap();
+newObj.set(obj, "ojectValue")
+obj = null;
+console.log(newObj);
+console.log(obj);
+console.log(newObj);
+*/
+
 /*  Regular Expression
 
 Regular Expression: pattern use to check data valid or not
@@ -4065,214 +4274,6 @@ product.forEach(function(ele){
     ele.getAttribute("dis") + " | " + ele.getAttribute("prices") + "$";
   });
 });
-*/
-
-/*  objects data type methods
-***********************************************************************
-syntax: ([
-  [key, value],
-  [key, value],
-  [key, value],
-]);
-or
-([
-  [{key: "value"}, {key: "value"}, {key: "value"}],
-  [{key: "value"}, {key: "value"}, {key: "value"},]
-]);
-
-
-set data type
-new Set(): it is object data type, use as array
-!!store only unique values!!
-!!cannot access elements by index[]!!
-!!set data use like filter method!!
-- size: property use to count unique value.
-- add():
-- delete():
-- clear():
-- has():
-Ex:/
-let arr = [1,2,33,33,3];
-let unique = new Set(arr);
-unique.add("a").add("b").add("b").add("a").add("b").add("a").add("c").add("c").add("d").add("c");
-console.log(unique.size);
-console.log(unique.delete("c"));
-console.log(unique.has("D".toLowerCase()));
-console.log(unique.size);
-unique.clear();
-console.log(unique.size);
-console.log(unique);
-- !!can store any data type inside of the array, (storage array, string)!!
-EX:/
-let arr = [1,1,2,3,4,5,5];
-let str = "1123455";
-let newArr = new Set(arr);
-console.log(newArr);
-let newStr = new Set(str);
-console.log(newStr);
-- !!have keys, value and entries!!
-EX:/
-let arr = [1,1,2,3,"A","A","B"];
-let newArr = new Set(arr);
-console.log(newArr);
-let iterator = newArr.values() // .keys()
-console.log(iterator);
-console.log(iterator.next()); // {value: 1, done: false}
-console.log(iterator.next().value); // 2
-console.log(iterator.next().value); // 3
-console.log(iterator.next().value); // A
-console.log(iterator.next().value); // B
-console.log(iterator.next().done); // true
-- !!can use forEach!!
-EX:/
-let mySet = new Set()
-mySet.add(1).add(2).add(2).add(2).add(3)
-console.log(mySet);
-mySet.forEach(el => {
-  console.log(el + el);
-});
-Ex:/
-let items = [1,1,2,2,3,3,4,4];
-let uniqueItems1 = new Set(items);
-let uniqueItems2 = new Set(["A","A","B","C","D","D","E","F"]);
-console.log(uniqueItems1);
-console.log(uniqueItems1.size);
-console.log(uniqueItems1.add(5).add(6).add(7));
-console.log(uniqueItems1.size);
-console.log(uniqueItems1.delete(1));
-uniqueItems1.delete(2);
-console.log(uniqueItems1.size);
-console.log(`does have 1 : ${uniqueItems1.has(1)}`);
-console.log(`does have 4 : ${uniqueItems1.has(4)}`);
-console.log(uniqueItems1.size);
-uniqueItems1.clear();
-console.log(uniqueItems1.size);
-console.log(uniqueItems1);
-console.log("*".repeat(25))
-console.log(uniqueItems2);
-console.log(uniqueItems2.size);
-console.log(uniqueItems1.add("G").add("H").add("I"));
-console.log(uniqueItems2.size);
-uniqueItems2.delete("A");
-console.log(uniqueItems2.delete("a"));
-console.log(uniqueItems2.size);
-console.log(`does have "C" : ${uniqueItems2.has("C")}`);
-console.log(`does have "A" : ${uniqueItems2.has("A")}`);
-console.log(uniqueItems2.size);
-uniqueItems2.clear();
-console.log(uniqueItems2.size);
-console.log(uniqueItems2);
-
-
-
-WeakSet(garbage collector): store objects that become anuses(garbage collection) to remove them from memory
-- can store only object data type inside of the array
-- does not have size property
-- does not have clear() , keys(), ... ect methods
-- can't use foreach() method
-Ex:/
-let elem2 = [{a:1,b:2}, {a:3,b:4}, {a:5,b:6}];
-let uniqueElem2 = new WeakSet(elem2);
-console.log(uniqueElem2);
-
-
-Map data type: object use like object with some different's
-Map():[size, delete(), clear(), has()]
-- !!map does not contain default key but, object have!!
-- !!map put the data in order but, object not 100%!!
-- !!map can get items by size() but, object only manually!!
-- !!map can loop in keys directly but, object can't only manually!!
-- !!map better performance than object in add and remove data!!
-- !!map keys can be [object, function or any data type] but, object can be symbol!!
-- size: property use to count unique value.
-- delete():
-- clear():
-- has():
-Ex:/
-let obj = {}, // have prototype
-emptyObj = Object.create(null), // have no prototype
-mapObj = new Map(); // have no prototype
-console.log(obj);
-console.log(emptyObj);
-console.log(mapObj);
-Ex:/
-let obj = {
-  1: "number",
-  "1": "string",
-};
-let newMapObj = new Map();
-newMapObj.set(1,"number");
-newMapObj.set("1","string");
-console.log(newMapObj.get(1));
-console.log(obj[1]);
-newMapObj.set(true,"boolean");
-newMapObj.set({c:1, d:2,},"object");
-newMapObj.set(n => n = 1  + 1,"function");
-console.log(newMapObj);
-Ex:/
-let myMap = new Map([
-  ["name", "string"],
-  ["phone", "number"],
-  [false, "boolean"],
-]);
-myMap.set("address","Arkweet");
-myMap.set("email", "melfatih841@gmail.com");
-myMap.set("hallo",function hallo(){console.log("hallo");});
-console.log(myMap);
-console.log(myMap.size);
-console.log(myMap.has("hallo"));
-console.log(myMap.size);
-console.log(myMap.delete("hallo"));
-console.log(myMap.size);
-myMap.clear();
-console.log(myMap);
-console.log(myMap.size);
-Ex:/
-let obj = {
-  1: "one",
-  2: "two",
-};                              // Error: can not contain object in Map data type
-let newObj = new Map(obj);
-console.log(newObj);
-
-
-WeakMap: store object only and remove them once they become anuses to (garbage collection)
-Ex:/
-// Map
-let myObj = {
-  theName: "Mohammed",
-  theNumber: 0922591418,
-  theAddress: "Arkweet",
-};
-let myMap = new Map();
-myMap.set(myObj, "object value");
-console.log(myObj);
-console.log(myMap);
-myObj = null;
-console.log("##".repeat(18));
-let myObj2 = {
-  theName: "Mohammed",
-  theNumber: 0922591418,
-  theAddress: "Arkweet",
-};
-//  WeakMap
-let myWeakMap = new WeakMap();
-myWeakMap.set(myObj2, "object value");
-console.log(myObj2);
-console.log(myWeakMap);
-myObj2 = null;
-Ex:/
-let obj = {
-  1: "one",
-  2: "two",
-}
-console.log(obj);
-let newObj = new WeakMap();
-newObj.set(obj, "ojectValue")
-obj = null;
-console.log(newObj);
-console.log(obj);
-console.log(newObj);
 */
 
 /*  this
